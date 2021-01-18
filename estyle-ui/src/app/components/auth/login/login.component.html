@@ -1,0 +1,31 @@
+<div class="auth-card bg-darkPink md:px-32 px-8 py-8">
+  <div class="flex flex-row justify-center mt-4 mb-12 flex-wrap">
+    <a [routerLink]="['/account/login']" routerLinkActive="active" class="mx-6 my-4 block">Log In</a>
+    <a [routerLink]="['/account/sign-up']" routerLinkActive="active" class="mx-6 my-4 block">Sign Up</a>
+  </div>
+  <form class="fields" (ngSubmit)="login()">
+    <app-input-field
+      id="username"
+      ngDefaultControl
+      name="username"
+      label="Username"
+      [formControl]="formGroup.get('username')"
+      wrap="mb-4"
+    ></app-input-field>
+    <app-input-field
+      id="password"
+      ngDefaultControl
+      name="password"
+      label="Password"
+      [formControl]="formGroup.get('password')"
+      wrap="mb-16"
+      type="password"
+    ></app-input-field>
+    <button type="submit" class="btn bg-yellow p-3 min-w-full">
+      Log in
+    </button>
+    <div class="flex justify-center mt-3 ">
+      <a class="underline forgot" [routerLink]="['/account/forgot-password']">Forgot Password?</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="floating {{ wrap }}">
+  <select
+    [id]="id"
+    class="floating__input"
+    [ngClass]="{ active: active || value.length > 0 }"
+    [name]="name"
+    (change)="onChange()"
+    value="{{value}}"
+  >
+    <option></option>
+    <option *ngFor="let option of options">{{ option }}</option>
+  </select>
+  <label
+    [for]="id"
+    class="floating__label"
+    [ngClass]="{ active: active || value.length > 0 }"
+    [attr.data-content]="label"
+  >
+    <span class="hidden--visually">{{ label }}</span>
+  </label>
+</div>

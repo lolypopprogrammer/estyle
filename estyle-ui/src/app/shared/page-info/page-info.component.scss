@@ -1,0 +1,60 @@
+.title {
+  margin-bottom: -4rem;
+  font-size: 6.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 15.4px;
+  color: #000000;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.description {
+  width: 50vw;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+  }
+
+  .image {
+    //margin-left: 4rem;
+    margin-top: 2.6rem;
+  }
+
+  .description {
+    width: calc(100vw - 2rem);
+
+    font-size: 1.34rem;
+    line-height: 1.7rem;
+  }
+
+  .text-divider-block {
+
+
+    //bottom: -1rem;
+  }
+
+  /*  .title-block {
+      margin-bottom: -1.4rem;
+    }
+
+    .text-divider-block {
+      width: calc(100vw - 2rem);
+
+      bottom: -1rem;
+    }
+
+    .text-divider-text {
+      font-size: 1.34rem;
+      line-height: 1.7rem;
+    }
+
+    .back-button {
+      letter-spacing: 0.1rem;
+    }*/
+}

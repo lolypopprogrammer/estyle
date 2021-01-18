@@ -1,0 +1,73 @@
+.title {
+  margin-bottom: -3rem;
+  letter-spacing: 2.015625rem;
+}
+
+.page-info-bg {
+  height: 90%;
+}
+
+.bg-pink {
+  background-color: var(--pink-3);
+}
+
+.price-list-button {
+  background-color: var(--yellow-light);
+}
+
+.accent-border-color {
+  border-color: var(--pink-light);
+}
+
+.accent-bg-color {
+  background-color: var(--pink-light);
+}
+
+@media (max-width: 768px) {
+  .how-it-works-image {
+    margin-top: -5rem;
+  }
+
+  .title {
+    margin-bottom: .6rem;
+
+    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .switch-buttons {
+    margin-bottom: -3rem;
+  }
+
+  .title-second {
+    line-height: 1;
+    font-size: 3rem;
+    letter-spacing: .54rem;
+  }
+
+  .text-second {
+    line-height: 1.7rem;
+  }
+
+  .price-list-button {
+    font-size: 1.3rem;
+    letter-spacing: .07rem;
+  }
+
+  .how-it-works {
+    margin-top: 1.2rem;
+
+   line-height: 2.9rem;
+    letter-spacing: 0.6rem;
+    font-size: 2.7rem;
+  }
+
+  .review-bg {
+    background: #fffbf6;
+  }
+
+  .review-note {
+    font-size: 0.8rem;
+  }
+}

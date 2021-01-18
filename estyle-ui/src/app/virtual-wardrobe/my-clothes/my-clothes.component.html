@@ -1,0 +1,44 @@
+<div class="virtual-wardrobe-my-clothes">
+  <div class="virtual-wardrobe-my-clothes__header">
+    <div class="virtual-wardrobe-my-clothes__header--filter">
+      <button [ngClass]="{ active: activeFilter === '' }" (click)="onFilter()">
+        All
+      </button>
+      <button
+        *ngFor="let category of categories"
+        (click)="onFilter(category.id)"
+        [ngClass]="{ active: category.id === activeFilter }"
+      >
+        {{ category.name }}
+      </button>
+    </div>
+    <button
+      class="virtual-wardrobe-my-clothes__header--add"
+      (click)="goToAddForm()"
+    >
+      Add Item
+    </button>
+  </div>
+  <div class="virtual-wardrobe-my-clothes__cards">
+    <div
+      *ngFor="let product of products"
+      class="virtual-wardrobe-my-clothes__card"
+    >
+      <div
+        class="virtual-wardrobe-my-clothes__card__content"
+        (click)="clothingEdit(product.id)"
+      >
+        <img [src]="product.pictures" />
+      </div>
+      <h4 class="virtual-wardrobe-my-clothes__card__title">
+        {{ product.name }}
+      </h4>
+      <h2 class="virtual-wardrobe-my-clothes__card__brand">
+        {{ product.brand.name }}
+      </h2>
+    </div>
+  </div>
+  <div class="virtual-wardrobe-my-clothes__loadMore" *ngIf="hasMore">
+    <button (click)="onLoadMore()">Load More...</button>
+  </div>
+</div>

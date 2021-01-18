@@ -1,0 +1,48 @@
+@import '../../../scss/variables';
+.followers-component {
+
+  & .followers-filters {
+    display: flex;
+    margin-bottom: 2rem;
+
+    .followers-filters__button {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      color: $primaryColor;
+      font-size: 1rem;
+      font-weight: bold;
+      outline: none;
+    }
+  }
+
+  & .followers-wrapper {
+    display: flex;
+
+    .followers-list {
+      margin-right: 1rem;
+
+      img {
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+      }
+
+      .followers-name {
+        color: $primaryColor;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 0.8rem;
+      }
+
+      .followers-info {
+        display: flex;
+
+        p {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+
+  }
+}

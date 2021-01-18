@@ -1,0 +1,30 @@
+.__item {
+  font-size: 15px;
+
+  line-height: 28px;
+
+  color: #9fa4af;
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: 3px solid #959595;
+    border-radius: 50%;
+    top: 35%;
+    right: -1.37rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.--active {
+  position: relative;
+
+  color: #000;
+}

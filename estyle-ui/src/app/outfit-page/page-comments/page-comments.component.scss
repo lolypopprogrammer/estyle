@@ -1,0 +1,39 @@
+
+
+.comments {
+  width: 60%;
+}
+.comments h3 {
+  letter-spacing: 4px;
+  line-height: 30px;
+  color: #363636;
+  font-family: "Silver South Serif", Serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.add-comments__text{
+  width: 100%;
+  outline: none;
+  margin-top: 1rem;
+  border: 1px solid #d7d7d7;
+  padding: 1rem;
+  min-height: 150px;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.comment-send {
+  width: 25%;
+  background: #fe82b8;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}

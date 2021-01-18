@@ -1,0 +1,52 @@
+<div
+  class="avenue-card flex relative mx-4 md:mx-0 flex-col"
+  [style.width]="width"
+  [ngClass]="{
+    'col': layout === 'column',
+    'row': layout !== 'column',
+    'md:flex-row-reverse ': layout !== 'column',
+    'inverted': isImageBackground
+  }"
+  [ngStyle]="{
+    'background': isImageBackground ? 'url(' + image + ')' : null,
+    'background-size': video ? 'auto' : isImageBackground ? 'cover' :  null,
+    'background-repeat': video ?'no-repeat' : null,
+    'background-position': video ? 'right' : null
+  }">
+
+  <span class="__icon icon-info absolute"></span>
+
+  <img
+    *ngIf="!isImageBackground"
+    appResponsiveImage
+    [sizeOptions]="{
+      'xs': mobileImage,
+      'md': mobileImage,
+      'sm': mobileImage
+    }"
+    [src]="image"
+    [alt]="title"
+    [ngStyle]="{
+    'width': trendingItem ? '20%' : null
+  }">
+
+  <p class="avenue-card--tag block text-darkPink">
+    {{ isPremium ? ' Premium' : 'Free' }}
+  </p>
+  <div
+    class="avenue-card__inner"
+    [ngClass]="{
+      'p-4': layout === 'column',
+      'pt-4 md:pt-32': layout !== 'column' && notPaddingTitle === false,
+      'pad-right': padRight,
+      'not-padding-title': notPaddingTitle === true,
+      'trending-item': trendingItem === true
+    }">
+    <h3 class="title">{{ title }}</h3>
+    <p class="description py-4">{{ body }}</p>
+    <button class="text-black font-bold py-2 md:py-4 px-2 md:px-8 bg-yellow focus:outline-none view-more-button"
+            (click)="viewMore()">
+      View More
+    </button>
+  </div>
+</div>

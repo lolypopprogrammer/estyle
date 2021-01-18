@@ -1,0 +1,26 @@
+<div class="feed-card">
+  <img class="main-thumbnail" src="{{image}}" alt="main image" (click)="view()">
+  <div class="card-statistic">
+    <div class="comments icons">
+      <i class="material-icons">forum</i>
+      <span>{{comments.length}}</span>
+    </div>
+    <div (click)="like()" class="likes icons">
+      <i class="material-icons" [ngClass]="{blue: myLike}" >favorite</i>
+      <span>{{currentLikes}}</span>
+    </div>
+  </div>
+  <div class="signature">
+    <div class="author-thumbnail" (click)="profileView()">
+      <img src="{{authorThumbnail}}" alt="author">
+    </div>
+    <div class="description">
+      <div class="paragraph__description">
+        <p>{{name}}</p>
+      </div>
+      <div class="author__description">
+        <span>by <a (click)="profileView()" style="cursor: pointer" >{{author}}</a></span>
+      </div>
+    </div>
+  </div>
+</div>

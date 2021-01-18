@@ -1,0 +1,29 @@
+<label class="w-full flex justify-start items-start">
+  <input class="checkbox-input"
+         type="checkbox"
+         [hidden]="true"
+         [checked]="checked"
+         (change)="onChange($event)"
+         (click)="onClick($event)">
+
+  <span class="w-6 h-6 border-2 rounded border-pink-500 relative"
+        [ngClass]="{
+          'bg-pink-500': checked && typeItem !== 'radio',
+          'rounded-full': typeItem === 'radio'
+        }">
+    <span class="icon-checkmark text-white w-full h-full absolute"
+          *ngIf="typeItem !== 'radio'"
+          [style.top.px]="2"
+          [style.left.px]="2"
+          [hidden]="!checked"></span>
+    <span class="bg-pink-500 rounded-full w-4 h-4 absolute"
+          *ngIf="typeItem === 'radio'"
+          [style.top.px]="2"
+          [style.left.px]="2"
+          [hidden]="!checked"></span>
+  </span>
+
+  <span class="ml-4 text-base leading-6 flex-1">
+    <ng-content></ng-content>
+  </span>
+</label>

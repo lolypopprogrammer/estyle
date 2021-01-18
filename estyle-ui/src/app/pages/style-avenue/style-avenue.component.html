@@ -1,0 +1,118 @@
+<div class="avenue relative z-10">
+  <div class="__background bg-pink absolute top-0 left-0 w-full z-0"></div>
+
+  <div class="z-10 relative">
+    <div class="mb-8">
+      <app-page-info title="Style Avenue"
+                     image="./assets/images/style-avenue.jpg"
+                     mobileImage="./assets/images/one-to-one-session(mobile).png"
+                     titlePosition="left">
+      </app-page-info>
+    </div>
+
+    <div class="avenue-cards container mb-32">
+      <div class="avenue-cards--item">
+        <app-avenue-card
+          class="flex-none --pink --white-text"
+          title="Video Channel"
+          body="Get the most out of the video channel. Perfect up your personal styling skills. Learn how to craft a unique personal style from A-Z using gorgeous designs and tons of other fashion tips curated for you. "
+          href="/video-channel"
+          layout="row"
+          [isImageBackground]="false"
+          [isPremium]="true"
+          [padRight]="true"
+          image="assets/images/video_chanel_pic_2.png"
+          [video]="true"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item">
+        <app-avenue-card
+          *ngIf="quiz$ | async as quiz"
+          title="Style Guide"
+          body="Get personalized advice on clothes that will suit your body shape and define your identity."
+          [href]="!!quiz ? '/style-guide' : '/quiz'"
+          layout="column"
+          image="assets/images/style-guide.jpg"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item">
+        <div [style.marginBottom]="'1.5rem'">
+          <app-avenue-card
+            title="Styling Tips"
+            body="You’ll get weekly outfits tailored to you straight to the inbox helping you make your fashion choices easier & save you plenty of time."
+            href="/styling-tips"
+            layout="column"
+            [isImageBackground]="true"
+            image="assets/images/styling-tips.jpg"
+          ></app-avenue-card>
+        </div>
+        <app-avenue-card
+          title="1:1 Session"
+          body="Meet a professional persona stylist face to face, get pampered and feel like a celebrity in a real life."
+          href="/one-to-one-session"
+          [isPremium]="true"
+          layout="column"
+          image="assets/images/personal-session.jpg"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item">
+        <app-avenue-card
+          title="Virtual Wardrobe"
+          body="Shake up & style your wardrobe working with existing clothes. Get the exemplary clothes combinations fitting into the wardrobe-essentials.
+        Get the shopping list option made especially for you."
+          href="/virtual-wardrobe"
+          [isPremium]="true"
+          layout="column"
+          image="assets/images/virtual-wardrobe.jpg"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item">
+        <app-avenue-card
+          title="Online Stylist"
+          body="Creates outfits options based on your preferences and needs sent to estyleshaker."
+          layout="row"
+          [isPremium]="true"
+          href="/online-stylist"
+          image="assets/images/online-stylist.jpg"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+        <app-avenue-card
+          title="My Wishlist"
+          body="Suggest saving your styling choices to share it with friends and family."
+          href="/wish-list"
+          [notPaddingTitle]="true"
+          [isImageBackground]="true"
+          image="assets/images/wishlist.jpg"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+        <app-avenue-card
+          title="Trending"
+          body="Check out who wear what from latest trends and enjoy it's high-end or street style options. Find your favourite items online and shop for them straight away or save them to your wishlist."
+          href="/styling-templates"
+          [isPremium]="true"
+          [notPaddingTitle]="true"
+          [trendingItem]="true"
+          layout="row"
+          image="assets/images/styling-templates.jpg"
+          mobileImage="assets/images/13973.png"
+        ></app-avenue-card>
+      </div>
+      <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+        <app-avenue-card
+          class="flex-none --pink --white-text"
+          title="Style & Play"
+          body="Show off your style, create collections from actual trends or post a video of your style choices. Get inspired by other stylists and be part of estyleshaker family"
+          href="/style-and-play"
+          layout="row"
+          [isImageBackground]="false"
+          [isPremium]="true"
+          image="assets/images/3213.png"
+        ></app-avenue-card>
+      </div>
+    </div>
+  </div>
+
+  <app-newsletter></app-newsletter>
+</div>

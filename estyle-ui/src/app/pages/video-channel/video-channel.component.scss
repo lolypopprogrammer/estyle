@@ -1,0 +1,64 @@
+.description {
+  width: 50vw;
+}
+
+.video-title {
+  font-size: 6.875rem;
+
+  letter-spacing: 5.15625rem;
+}
+
+.page-info-bg {
+  height: 90%;
+}
+
+.main-video {
+  //height: 33rem;
+}
+
+.video-top-bg {
+  top: -130px;
+
+  height: 10rem;
+}
+
+.video-bottom-bg {
+  bottom: -80px;
+
+  height: 5rem;
+}
+
+.bg-pink {
+  background-color: var(--pink-3);
+}
+
+.bg-pink-light {
+  background-color: var(--pink-light);
+}
+
+.accent-border-color {
+  border-color: var(--pink-light);
+}
+
+@media (max-width: 768px) {
+  .mobile-title-block {
+    font-size: 3rem;
+    line-height: normal;
+
+    &__first {
+      letter-spacing: 2.4rem;
+    }
+
+    &__second {
+      letter-spacing: 0.9rem;
+    }
+  }
+
+  .text-second {
+    line-height: 1.7rem;
+  }
+
+  .bg-mobile {
+    height: 2500px;
+  }
+}

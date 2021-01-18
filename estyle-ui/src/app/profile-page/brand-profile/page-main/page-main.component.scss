@@ -1,0 +1,75 @@
+.profile-background {
+  margin-top: 2rem;
+  height: 400px;
+  background-position: center;
+}
+.profile-info-block {
+  display: flex;
+  //align-items: flex-end;
+  margin-top: 1.2rem;
+}
+
+.profile-container {
+  min-width: 810px !important;
+  max-width: 789px !important;
+  margin-top: 3rem;
+}
+.gear {
+  position: relative;
+  width: 20px;
+  right: -100px;
+  top: -10px;
+  cursor: pointer;
+}
+.loading {
+  background: url("../../../../assets/gif/5.gif") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.profile-photo {
+  max-width: 110px;
+  max-height: 110px;
+  min-width: 110px;
+  min-height: 110px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.profile-description {
+  padding-left: 1rem;
+  width: 100%;
+  h1 {
+    font-weight: 900;
+    font-size: 2em;
+  }
+  .profile-bio {
+    position: relative;
+    bottom: 10px;
+  }
+}
+.group-btn {
+  .btn-follow {
+    background: #fffc01;
+    padding: 3px 13px;
+  }
+}
+.status-input {
+  width: 100%;
+  border-bottom: #e0e0e0 1px solid;
+  outline: none;
+  background: #f4f4f4;
+  padding: 2px;
+  font-size: small;
+}
+
+@media screen and(max-width: 600px) {
+  .profile-info-block {
+    display: block;
+    align-items: flex-end;
+    margin: 1.2rem;
+  }
+
+  .profile-photo {
+    margin: 0 0 1.2rem 1.2rem;
+  }
+}

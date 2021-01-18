@@ -1,0 +1,14 @@
+<div  [ngClass]="{ 'h-full': items > 1 }" class="pr-12 py-10 bg-white relative">
+
+  <div [ngClass]="{ 'h-full': items > 1 }" class="flex">
+
+    <div class="relative z-10">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <div *ngIf="items > 1" class="bg-pink-300 absolute w-2/3 right-0 z-0" [style.top.%]="15" [style.height.rem]="25"></div>
+
+<!--  <div class="flex flex-col justify-center items-center">{{ page }}</div>-->
+
+</div>

@@ -1,0 +1,26 @@
+<div class="feed-component">
+  <div class="d-flex">
+    <div *ngFor="let video of videos; trackBy: trackByFn" class="col-lg-3">
+      <app-feed-video-card
+        [image]="video.image"
+        [author]="video.author"
+        [comments]="video.comments"
+        [likes]="video.likes"
+        [name]="video.name"
+        [authorThumbnail]="video.authorThumbnail"
+        [authorLink]="video.authorLink"
+        [link]="video.link"
+        [playerLink]="video.playerLink"
+      >
+      </app-feed-video-card>
+    </div>
+  </div>
+  <div class="more">
+    <button
+      class="text-black font-bold py-3 px-1 bg-white focus:outline-none"
+      (click)="loadMoreFeeds()"
+    >
+      load more...
+    </button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="flex justify-center items-center">
+  <button class="w-10 h-10 bg-white focus:outline-none"
+          *ngFor="let feature of features"
+          (click)="select(feature)"
+          [ngClass]="{'opacity-50': feature.requireSelected && !(selected$ | async)}"
+          [disabled]="feature.requireSelected && !(selected$ | async)">
+    <span [attr.class]="feature.icon"></span>
+  </button>
+</div>

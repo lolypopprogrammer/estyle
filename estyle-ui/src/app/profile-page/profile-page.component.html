@@ -1,0 +1,17 @@
+<div *ngIf="isUser()">
+  <div
+    class="profile-background"
+    style="background-image: url('assets/images/profile-bg.jpg')"
+  ></div>
+  <app-page-main [id]="id"></app-page-main>
+  <div [ngClass]="{ 'with-search': isSearched }">
+     <search-panel *ngIf="isSearched"></search-panel> 
+    <app-profile-feed
+      (isSearched)="startSearching($event)"
+      [id]="id"
+    ></app-profile-feed>
+  </div>
+</div>
+<div *ngIf="!isUser()" #brandPage>
+  <brand-profile-page [isOwner]="isOwner" [id]="id"></brand-profile-page>
+</div>

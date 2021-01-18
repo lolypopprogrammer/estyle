@@ -1,0 +1,72 @@
+<div class="grid grid-cols-6 w-full h-screen">
+  <div class="col-span-1">
+    <app-account-left-menu></app-account-left-menu>
+  </div>
+  <div class="col-span-5 bg-auto bg-center bg-no-repeat bg-right-bottom pl-20"
+       [style.background-image]="'url(./assets/images/Fotolia_85638663_Subscription_Monthly_M_copy.png)'">
+
+    <div class="p-10">
+      <div class="text-sm font-medium">Account Settings</div>
+      <div class="mt-8 text-lg font-medium">Settings</div>
+
+      <div class="mt-8 w-1/4">
+        <div class="text-4xl font-playfair">
+          Basic info
+          <hr class="w-1/3 accent-border-color border-2">
+        </div>
+
+        <div class="mt-4 flex flex-col">
+          <label class="text-sm font-medium">First name</label>
+          <div class="flex justify-end items-center">
+            <input
+              class="borderbg-white focus:outline-none border accent-border-color py-1 px-4 block w-full appearance-none leading-normal"
+              type="text">
+            <span class="icon-pencil absolute pr-3"></span>
+          </div>
+        </div>
+
+        <div class="mt-4 flex flex-col">
+          <label class="text-sm font-medium">Last name</label>
+          <div class="flex justify-end items-center">
+            <input
+              class="borderbg-white focus:outline-none border accent-border-color py-1 px-4 block w-full appearance-none leading-normal"
+              type="text">
+            <span class="icon-pencil absolute pr-3"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-1/4">
+        <div class="mt-8 text-4xl font-playfair">
+          Login info
+          <hr class="w-1/3 accent-border-color border-2">
+        </div>
+
+        <div class="mt-4 flex flex-col">
+          <label class="text-sm font-medium">E-mail</label>
+          <div class="flex justify-end items-center">
+            <input
+              class="borderbg-white focus:outline-none border accent-border-color py-1 px-4 block w-full appearance-none leading-normal"
+              type="text">
+            <span class="icon-pencil absolute pr-3"></span>
+          </div>
+        </div>
+
+        <div class="mt-4 flex flex-col">
+          <label class="text-sm font-medium">Password</label>
+          <div class="flex justify-end items-center">
+            <input
+              class="borderbg-white focus:outline-none border accent-border-color py-1 px-4 block w-full appearance-none leading-normal"
+              type="password">
+            <span class="icon-pencil absolute pr-3"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <button class="submit-button p-3 px-8 text-base font-medium">Save Changes</button>
+      </div>
+    </div>
+
+  </div>
+</div>

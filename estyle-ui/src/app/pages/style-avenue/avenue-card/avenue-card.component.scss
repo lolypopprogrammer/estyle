@@ -1,0 +1,148 @@
+:host {
+  &.--pink {
+    .avenue-card {
+      background-color: var(--pink-light);
+    }
+  }
+
+  &.--white-text {
+    .title, .description {
+      color: #ffffff;
+    }
+  }
+}
+
+.avenue-card {
+  background-color: #fffbf6;
+  border: solid 1px #ff82b8;
+
+  position: relative;
+
+  .__icon {
+    top: 1rem;
+    right: 1rem;
+
+    font-size: 1.4rem;
+  }
+
+  .view-more-button {
+    background-color: var(--yellow-light);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__inner {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+
+    h3 {
+      padding-right: 2rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      color: #222328;
+    }
+
+    p {
+      padding: 0.75rem 0.5rem 0 0;
+      font-size: 1rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.63;
+      letter-spacing: normal;
+    }
+
+    button {
+      text-transform: uppercase;
+    }
+  }
+
+  .not-padding-title {
+    padding-top: 3.75rem;
+  }
+
+  &.row {
+    img {
+      width: 36%;
+      flex-shrink: 0;
+    }
+    .avenue-card__inner {
+      padding-right: 3rem;
+    }
+  }
+
+  &.col {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &.inverted {
+    .avenue-card__inner {
+      p, h3 {
+        color: #fff;
+      }
+    }
+    .avenue-card__inner.pad-right {
+      padding-right: 16rem;
+      padding-bottom: 3rem;
+      p {
+        padding: 1.5rem 0;
+      }
+    }
+  }
+  &.col.inverted .avenue-card__inner {
+    padding-top: 3.25em;
+  }
+
+  &--tag {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 768px) {
+  .avenue-card {
+    max-width: 100%;
+    width: auto !important;
+
+    &.row {
+      img {
+        width: 100%;
+      }
+    }
+
+    &--tag {
+      padding: 0.2rem .5rem;
+    }
+
+    &.inverted {
+      .avenue-card__inner {
+        p, h3 {
+          color: #fff;
+        }
+      }
+      .avenue-card__inner.pad-right {
+        margin-right: 3rem;
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+<div class="avenue">
+  <h1 class="text-center relative">Style Avenue</h1>
+  <div class="avenue-welcome mb-8 relative">
+    <div class="container">
+      <img
+        src="assets/images/style-avenue.jpg"
+        class="w-100"
+        alt="style-avenue"
+      />
+    </div>
+  </div>
+  <div class="avenue-cards container mb-32">
+    <div class="avenue-cards--item">
+      <app-avenue-card
+        title="Video Channel"
+        body="Get the most out of the video channel. Perfect up your personal styling skills. Learn how to craft a unique personal style from A-Z using gorgeous designs and tons of other fashion tips curated for you. "
+        href="/video-channel"
+        class="flex-none"
+        layout="row"
+        [isImageBackground]="true"
+        [isPremium]="true"
+        [padRight]="true"
+        image="assets/images/video.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item">
+      <app-avenue-card
+        title="Style Guide"
+        body="Get personalized advice on clothes that will suit your body shape and define your identity."
+        href="/style-guide"
+        layout="column"
+        image="assets/images/style-guide.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item">
+      <div [style.marginBottom]="'1.5rem'">
+        <app-avenue-card
+          title="Styling Tips"
+          body="You’ll get weekly outfits tailored to you straight to the inbox helping you make your fashion choices easier & save you plenty of time."
+          href="/styling-tips"
+          layout="column"
+          [isImageBackground]="true"
+          image="assets/images/styling-tips.jpg"
+        ></app-avenue-card>
+      </div>
+      <app-avenue-card
+        title="1:1 Session"
+        body="Meet a professional persona stylist face to face, get pampered and feel like a celebrity in a real life."
+        href="/one-to-one-session"
+        [isPremium]="true"
+        layout="column"
+        image="assets/images/personal-session.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item">
+      <app-avenue-card
+        title="Virtual Wardrobe"
+        body="Shake up & style your wardrobe working with existing clothes. Get the exemplary clothes combinations fitting into the wardrobe-essentials.
+        Get the shopping list option made especially for you."
+        href="/virtual-wardrobe"
+        [isPremium]="true"
+        layout="column"
+        image="assets/images/virtual-wardrobe.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item">
+      <app-avenue-card
+        title="Online Stylist"
+        body="Creates outfits options based on your preferences and needs sent to estyleshaker."
+        layout="row"
+        [isPremium]="true"
+        href="/online-stylist"
+        image="assets/images/online-stylist.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+      <app-avenue-card
+        title="My Wishlist"
+        body="Suggest saving your styling choices to share it with friends and family."
+        href="/wishlist"
+        [isImageBackground]="true"
+        image="assets/images/wishlist.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+      <app-avenue-card
+        title="Trending"
+        body="Check out who wear what from
+        latest trends and enjoy it's
+        high-end or street style o}
+        Find your favourite items online
+        and shop for them straight away
+        or save them to your wishlist.
+        "
+        href="https://estyleshaker.melonberries.sk/trending/"
+        [isPremium]="true"
+        layout="row"
+        image="assets/images/styling-templates.jpg"
+      ></app-avenue-card>
+    </div>
+    <div class="avenue-cards--item" [style.marginTop]="'1.5rem'">
+      <app-avenue-card
+        title="Style & play"
+        body="Show off your style, create collections from actual trends or post a video of your style choices.
+         Get inspired by other stylistas and be part of estyleshaker family."
+        href="/style-and-play"
+        [isPremium]="true"
+        layout="row"
+        image="assets/images/tamara-bellis-68csPWTnafo-unsplash.png"
+      ></app-avenue-card>
+    </div>
+  </div>
+  <app-newsletter></app-newsletter>
+</div>
+

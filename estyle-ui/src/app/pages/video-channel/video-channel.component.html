@@ -1,0 +1,111 @@
+<div class="relative z-20 md:z-40">
+  <div class="absolute top-0 left-0 w-full bg-pink page-info-bg z-10 md:z-40"></div>
+
+  <div class="relative z-20 md:z-40">
+    <app-page-info title="Video channel"
+                   image="./assets/images/video-channel/3109672.png"
+                   mobileImage="./assets/images/video-channel/671772-PPN5RH-745_copy.png">
+    </app-page-info>
+  </div>
+
+  <div class="absolute w-1/2 top-0 left-0 bg-pink-light bg-mobile block md:hidden z-0"></div>
+</div>
+
+<div *ngIf="primary" class="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 my-12 md:my-16 px-4 md:p-0 z-30">
+  <div class="relative bg-white">
+    <div class="relative z-30">
+      <app-video class="block main-video"
+                 [previewUrl]="primary.thumbnail"
+                 [videoUrl]="primary.url">
+      </app-video>
+<!-- 
+      <div
+        class="hidden md:flex justify-between items-center text-base p-4 border-3 border-t-0 border-pink-300 font-semibold">
+        <div>Transcript <span class="icon-right-arrow"></span></div>
+        <div>Quiz <span class="icon-right-arrow"></span></div>
+      </div> -->
+
+      <div class="hidden md:block border-0 md:border-3 border-t-0 accent-border-color p-10" *ngIf="id">
+        <div class="ml-10 mb-4 font-semibold block">
+          Transcript: 
+        </div>
+        <div class="ml-10 text-base">
+          {{ primary.transcript }}
+        </div>
+        <!-- <div class="m-10">
+          <div class="font-playfair">
+            <span class="text-4xl">Transcript</span>
+            <span class="ml-3 text-4xl">{{Do you consider your BUST size to be:}}</span>
+          </div>
+        </div> -->
+
+        <!-- <div class="m-10" *ngFor="let i of [1, 3, 4]">
+          <div class="font-playfair">
+            <span class="text-4xl">1.</span>
+            <span class="ml-3 text-4xl">Do you consider your BUST size to be:</span>
+          </div>
+
+          <div class="mt-8">
+            <div>
+              <app-checkbox>
+                Small
+              </app-checkbox>
+            </div>
+
+            <div class="mt-4">
+              <app-checkbox>
+                Big
+              </app-checkbox>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="flex justify-center">
+          <button class="border-3 accent-border-color py-3 px-10 text-base leading-7 font-medium"
+                  type="button">
+            Finish quiz
+          </button>
+        </div> -->
+      </div>
+
+      <div class="bg-pink-light absolute left-0 bottom-0 w-1/2 video-bottom-bg z-0 hidden md:block"></div>
+    </div>
+
+    <div class="bg-pink-light absolute left-0 top-0 w-1/2 video-top-bg z-0 hidden md:block"></div>
+  </div>
+
+  <div class="relative">
+    <div class="block md:hidden font-playfair mobile-title-block uppercase text-center">
+      <div class="mobile-title-block__first">Video</div>
+      <div class="mobile-title-block__second">Channel</div>
+    </div>
+
+    <div class="hidden md:block video-title font-playfair uppercase text-pink-400">
+      Video <br>
+      title
+    </div>
+
+    <div class="md:ml-12 md:mt-24 md:w-3/4">
+      <div class="border-b-2 md:border-b-4 border-black md:border-pink-300 text-2xl md:text-4xl uppercase mt-4 md:mt-0 pb-2 md:pb-4">
+        <span class="text-black md:text-pink-500 font-semibold">#1</span>
+        <span class="ml-2 text-black md:text-pink-400 font-normal">{{ primary.title }}</span>
+      </div>
+      <div class="text-xl md:text-base mt-6 font-medium md:font-medium">
+        {{ primary.description }}
+      </div>
+    </div>
+
+    <div class="hidden md:flex justify-center items-center" *ngIf="id">
+      <div class="w-3/4 mt-20">
+        <app-videos [videos]="videos"></app-videos>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-10 relative z-30" *ngIf="!id">
+  <app-videos [videos]="videos"
+              [page]="page"
+              gridClass="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+  </app-videos>
+</div>

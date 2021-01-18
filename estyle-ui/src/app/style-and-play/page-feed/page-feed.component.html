@@ -1,0 +1,43 @@
+<div class="feed-component mt-5">
+  <component-title [title]="'Feed'"> </component-title>
+  <div class="search__feed-component">
+    <span>search</span>
+  </div>
+  <div
+    class="d-flex"
+    style="
+      width: 100vw;
+      font-size: 3rem;
+      margin-top: 15rem;
+      margin-bottom: 15rem;
+    "
+    *ngIf="outfitCards.length == 0"
+  >
+    No outfits have been added yet
+  </div>
+  <div *ngIf="outfitCards.length != 0" class="d-flex container">
+    <div *ngFor="let card of outfitCards" class="col-lg-3">
+      <app-feed-card
+        [image]="card.pictures"
+        [author]="card.author.fullname"
+        [name]="card.name"
+        [comments]="card.comments"
+        [likes]="card.likes"
+        [title]="card.title"
+        [authorThumbnail]="card.author.backgroundBrandData || authorThumbnail"
+        [href]="card.href"
+        [id]="card.id"
+        [authorId]="card.author.id"
+      >
+      </app-feed-card>
+    </div>
+  </div> 
+  <div class="more" style="margin-bottom: 5rem" *ngIf="hasMore">
+    <button
+      class="text-black font-bold py-3 px-1 bg-white focus:outline-none"
+      (click)="loadMoreFeeds()"
+    >
+      load more...
+    </button>
+  </div>
+</div>

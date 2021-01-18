@@ -1,0 +1,30 @@
+.title {
+  font-size: 3.75rem;
+  letter-spacing: 2rem;
+}
+
+.price-title {
+  line-height: 24.04px;
+  letter-spacing: 4.81px;
+}
+
+.price-value {
+  line-height: 20.5px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding-left: .2rem;
+
+    font-size: 1.4rem;
+    letter-spacing: .25rem;
+  }
+
+  .image-block {
+    margin-top: 8rem;
+
+    &.--right {
+      margin-top: -1rem;
+    }
+  }
+}

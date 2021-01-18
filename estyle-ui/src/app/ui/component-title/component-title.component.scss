@@ -1,0 +1,22 @@
+.title__feed-component {
+  font-size: 3.5rem;
+  letter-spacing: 12px;
+  line-height: 72px;
+  color: #241f20;
+  font-family: "Silver South Serif", serif;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: right;
+  width: 55%;
+  &:before {
+    content: "";
+    border: 2px solid black;
+    position: absolute;
+    left: -2%;
+    bottom: -12px;
+    height: 4px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="flex justify-center items-center">
+  <button class="button text-4xl flex flex-col items-center justify-center mx-2 focus:outline-none"
+          [ngClass]="{'bg-none': prevDisabled, 'bg-pink-500': !prevDisabled}"
+          type="button"
+          (click)="onPrevClick($event)"
+          [disabled]="prevDisabled">
+    <span class="icon icon-arrow-left "
+          [ngClass]="{'text-pink-500': prevDisabled, 'text-white': !prevDisabled}"></span>
+  </button>
+  <button class="button bg-pink-500 text-4xl flex flex-col items-center justify-center mx-2 focus:outline-none"
+          [ngClass]="{'bg-none': nextDisabled, 'bg-pink-500': !nextDisabled}"
+          type="button"
+          (click)="onNextClick($event)"
+          *ngIf="!nextDisabled">
+    <span class="icon icon-arrow-right text-white"
+          [ngClass]="{'text-pink-500': nextDisabled, 'text-white': !nextDisabled}"></span>
+  </button>
+</div>

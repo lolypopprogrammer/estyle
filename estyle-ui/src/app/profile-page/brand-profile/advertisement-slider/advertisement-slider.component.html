@@ -1,0 +1,43 @@
+<!--<div class="advertisement-slider">-->
+<!--  <div class="slider">-->
+<!--    <div class="slide" style="background-image: url('./assets/images/ads1.jpg')"></div>-->
+<!--  </div>-->
+<!--  <div class="control-panel"></div>-->
+<!--</div>-->
+
+<div class="advertisement-slider">
+  <div class="control-panel"></div>
+  <ngu-carousel
+    #myCarousel
+    [inputs]="carouselBanner"
+    (onMove)="onmoveFn($event)"
+    [dataSource]="images"
+  >
+    <ngu-item *nguCarouselDef="let j = index">
+      <div
+        class="slide"
+        [style.background]="'url(' + images[j] + ')'"
+        style="min-height: 200px"
+      >
+        <div *ngIf="isChanging" [ngStyle]="{ right: '-98%' }" class="gear">
+          <input
+            (change)="editBackground($event, j)"
+            [id]="j + 'Slider'"
+            type="file"
+            accept=".jpg, .jpeg, .png"
+            hidden
+          />
+          <label [for]="j + 'Slider'"
+            ><img
+              [ngStyle]="{ zIndex: 1000 }"
+              src="assets/images/gear.svg.png"
+              alt=""
+          /></label>
+        </div>
+      </div>
+    </ngu-item>
+
+    <button NguCarouselPrev class="leftRs">&lt;</button>
+    <button NguCarouselNext class="rightRs">&gt;</button>
+  </ngu-carousel>
+</div>

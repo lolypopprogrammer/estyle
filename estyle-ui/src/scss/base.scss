@@ -1,0 +1,101 @@
+html {
+  &.--font-size-7 {
+    font-size: 7px;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif !important;
+}
+
+.font-gilroy {
+  font-family: Gilroy, sans-serif;
+}
+
+.font-gilroy {
+  font-family: Gilroy, sans-serif;
+}
+
+.rotate-90 {
+  transform: rotate(-90deg);
+  transform-origin: top left;
+}
+
+div[data-popper-placement^="top"] #arrow {
+  bottom: -4px;
+}
+
+div[data-popper-placement^="bottom"] #arrow {
+  top: -4px;
+}
+
+div[data-popper-placement^="left"] #arrow {
+  right: -4px;
+}
+
+div[data-popper-placement^="right"] #arrow {
+  left: -4px;
+}
+
+.ng-select.esh-select {
+  border: 0;
+  min-height: 0;
+  border-radius: 0;
+  outline: none;
+}
+
+.ng-select.esh-select .ng-select-container {
+  min-height: 0;
+  border-radius: 0;
+  border: none;
+
+  background-color: #ff82b8;
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  border-color: #000 transparent transparent;
+}
+
+.ng-select.ng-select-opened > .ng-select-container .ng-arrow {
+  border-color: transparent transparent #000;
+}
+
+.page-title {
+  margin-bottom: -4rem;
+  font-size: 6.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 15.4px;
+  color: #000000;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.page-description {
+  width: 50vw;
+}
+
+.bg-yellow {
+  background: #fffa00;
+}
+.button {
+  height: 44px;
+
+  &--yellow {
+    border-color: #fffc00;
+  }
+}

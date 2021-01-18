@@ -1,0 +1,144 @@
+<div class="page-add-form container">
+  <div class="page-add-form-photo">
+    <div class="page-add-form-photo-title">
+      Add Photo
+      <span>
+        <label for="picture">Choose</label>
+        <input
+          (change)="onPictureSelected($event)"
+          id="picture"
+          name="picture"
+          accept="image/png, image/jpeg"
+          type="file"
+          (change)="onBackgroundChange($event)"
+        />
+      </span>
+    </div>
+    <div class="preview-wrapper">
+      <div
+        class="preview"
+        [ngStyle]="{ 'background-image': 'url(' + picture + ')' }"
+      ></div>
+    </div>
+    <div class="controls" *ngIf="userRole != 'BrandEditor'">
+      <button class="btn bg-yellow" (click)="submit()">Save</button>
+      <button class="btn" (click)="goBack()">Cancel</button>
+    </div>
+    <div class="controls" *ngIf="userRole == 'BrandEditor'">
+      <button class="btn bg-yellow" (click)="submitBrand()">Save</button>
+      <button class="btn" (click)="goBack()">Cancel</button>
+    </div>
+  </div>
+  <div *ngIf="userRole != 'BrandEditor'" class="fields">
+    <ui-input
+      placeholder="Name"
+      id="name"
+      name="name"
+      label="Name"
+      [formControl]="formGroup.get('name')"
+      value="{{ name }}"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+    <ui-select
+      id="category"
+      name="category"
+      label="{{ category || 'Select Category' }}"
+      [formControl]="formGroup.get('category')"
+      ngDefaultControl
+      wrap="mb-4"
+      (change)="getAttribute($event)"
+      [options]="categoryOptions"
+    >
+    </ui-select>
+    <ui-select
+      *ngFor="let attributeType of attributeList"
+      id="attributeType.name"
+      name="attributeType.name"
+      label="{{ 'Select ' + attributeType.name }}"
+      [formControl]="formGroup.get(attributeType.name.toLowerCase())"
+      ngDefaultControl
+      wrap="mb-4"
+      [options]="attributeType.attribute"
+    ></ui-select>
+    <ui-select
+      id="brand"
+      name="brand"
+      label="{{ brand || 'Brand' }}"
+      [formControl]="formGroup.get('brand')"
+      ngDefaultControl
+      wrap="mb-4"
+      [options]="brandOptions"
+    >
+    </ui-select>
+    <ui-select
+      placeholder="Ocasions"
+      id="ocasions"
+      name="ocasions"
+      label="{{ occasion || 'Ocasions' }}"
+      [formControl]="formGroup.get('ocasions')"
+      ngDefaultControl
+      wrap="mb-4"
+      [options]="occasionOptions"
+    ></ui-select>
+    <ui-tags
+      placeholder="Tags"
+      id="tags"
+      name="tags"
+      label="Tags"
+      [formControl]="formGroup.get('tags')"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-tags>
+    <ui-input
+      placeholder="Notes"
+      id="notes"
+      name="notes"
+      label="Notes"
+      [formControl]="formGroup.get('notes')"
+      value="{{ notes }}"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+  </div>
+  <div *ngIf="userRole == 'BrandEditor'" class="fields">
+    <ui-input
+      placeholder="Name"
+      id="name"
+      name="name"
+      label="Name"
+      [formControl]="formGroup.get('name')"
+      value="{{ name }}"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+    <ui-input
+      placeholder="Brand"
+      id="brand"
+      name="brand"
+      label="Brand"
+      [formControl]="formGroup.get('brand')"
+      value="{{ brand }}"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+    <ui-input
+      placeholder="Price"
+      id="price"
+      name="price"
+      label="Price"
+      [formControl]="formGroup.get('price')"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+    <ui-input
+      placeholder="Link"
+      id="link"
+      name="link"
+      label="Link"
+      [formControl]="formGroup.get('link')"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+  </div>
+</div>

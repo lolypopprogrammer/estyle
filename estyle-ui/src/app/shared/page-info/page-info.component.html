@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="title text-center md:text-{{ titlePosition }} relative ml-0 md:ml-10">
+    {{ title }}
+  </h1>
+</div>
+
+<div class="flex justify-center items-end md:items-center">
+  <div class="container">
+
+    <img class="block image pl-16 md:pl-0"
+         [ngClass]="{'w-full': fullWidthImage}"
+         appResponsiveImage
+         [sizeOptions]="{
+            'xs': mobileImage,
+            'md': mobileImage,
+            'sm': mobileImage
+         }"
+         [src]="image"
+         [attr.alt]="title">
+  </div>
+
+  <div class="description mb-4 pb-2 md:pb-0 md:mb-0 text-3xl font-normal border-black absolute right-0 font-semibold"
+       [ngClass]="{'border-b-3': ref?.childNodes?.length > 0}"
+       #ref>
+    <ng-content></ng-content>
+  </div>
+</div>

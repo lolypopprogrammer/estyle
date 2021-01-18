@@ -1,0 +1,14 @@
+.hidden {
+  display: none;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  margin: 0 2px;
+
+  .dropdown-item {
+    width: 212px;
+  }
+
+}

@@ -1,0 +1,105 @@
+.search-wrapper {
+  // padding-bottom: 5rem;
+  background: #feeaf3;
+  height: 100%;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+
+  & .search__filter {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-left: 1rem;
+    & input {
+      margin-bottom: 2px;
+      margin-right: 0.5rem;
+    }
+  }
+
+  & .checkbox__search::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+  }
+
+  & .title-category__search {
+    text-transform: uppercase;
+    padding-top: 5rem;
+    font-weight: bold;
+  }
+}
+
+.container__checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container__checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+}
+
+/* On mouse-over, add a grey background color */
+.container__checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container__checkbox input:checked ~ .checkmark {
+  background-color: #f321d7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container__checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container__checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.content-attributes.content {
+  flex-grow: 1;
+  width: 20rem;
+}

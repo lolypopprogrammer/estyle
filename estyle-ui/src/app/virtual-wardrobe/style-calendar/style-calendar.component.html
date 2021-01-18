@@ -1,0 +1,83 @@
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="cal-cell-top" (click)="dayNumberClicked($event)">
+    <div class="calendar-day" (mouseleave)="calendarDayMouseLeave($event)" (mouseenter)="calendarDayMouseEnter($event)">
+      <div class="calendar-day-image-container">
+        <span class="calendar-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+        <div class="calendar-day-image-slide">
+          <button class="calendar-day-image-slide-btn-left" (click)="prevDayOutfit(day.date)"
+                  *ngIf="(getCountOutfitsOfDate(day.date) > 1)"><
+          </button>
+        </div>
+        <div class="calendar-day-image" [style]="{'background-image': 'url('+getDayImage(day.date)+')'}"></div>
+        <div class="calendar-day-image-slide">
+          <button class="calendar-day-image-slide-btn-right" (click)="nextDayOutfit(day.date)"
+                  *ngIf="(getCountOutfitsOfDate(day.date) > 1)">>
+          </button>
+        </div>
+      </div>
+      <div class="calendar-day-footer">
+        <button class="calendar-day-footer-icon" (click)="onAddOutfitToDayClicked(day.date, $event)">+</button>
+        <button class="calendar-day-footer-icon" (click)="onEditDayOutfitClicked(day.date, $event)"
+                *ngIf="(getCountOutfitsOfDate(day.date) > 0)">✎
+        </button>
+        <button class="calendar-day-footer-icon" (click)="onRemoveDayOutfitClicked(day.date, $event)"
+                *ngIf="(getCountOutfitsOfDate(day.date) > 0)">-
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div class="style-calendar">
+  <div class="style-calendar-popup" [id]="popupId"
+       [style]="{display: popupIsVisible ? 'block' : 'none', 'left': popupPositionX + 'px', 'top': popupPositionY + 'px'}">
+    <div class="style-calendar-popup-header">
+      <div class="style-calendar-popup-header-title">Ocasions</div>
+      <span class="style-calendar-popup-header-close" (click)="hidePopup()">x</span>
+    </div>
+    <div class="style-calendar-popup-container" [id]="popupId">
+      <div class="style-calendar-popup-item" *ngFor="let outfit of outfits"
+           [id]="popupId"
+           [style]="{'background-image': 'url('+ getOutfitPictureURI(outfit)+')'}"
+           (click)="popupOutfitClicked(outfit)"
+           [ngClass]="{'style-calendar-popup-item-active': outfit['selected'] === true}"
+      >
+      </div>
+    </div>
+    <div class="style-calendar-popup-form">
+      <button (click)="popupButtonClicked()">{{currentPopupAction}}</button>
+    </div>
+  </div>
+  <div class="style-calendar-container">
+    <div class="style-calendar-panel">
+      <div
+        class="style-calendar-panel-previous-btn"
+        mwlCalendarPreviousView
+        [(viewDate)]="viewDate"
+        [view]="view"
+        (click)="calendarMonthChanged()"
+      >
+        <
+      </div>
+      <div class="style-calendar-panel-current-month">{{ viewDate | calendarDate:(view +
+        'ViewTitle'):'en' | uppercase }}</div>
+      <div
+        class="style-calendar-panel-next-btn"
+        mwlCalendarNextView
+        [(viewDate)]="viewDate"
+        [view]="view"
+        (click)="calendarMonthChanged()"
+      >
+        >
+      </div>
+    </div>
+    <mwl-calendar-month-view
+      [viewDate]="viewDate"
+      [refresh]="refresh"
+      (dayClicked)="dayClicked($event.day)"
+      [cellTemplate]="customCellTemplate"
+    >
+
+    </mwl-calendar-month-view>
+  </div>
+</div>

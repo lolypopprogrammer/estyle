@@ -1,0 +1,80 @@
+<div class="virtual-wardrobe-my-outfits">
+  <div class="virtual-wardrobe-my-outfits__header">
+    <div>
+      <span>{{ total }} Outfits</span>
+      <div class="relative">
+        <input
+          class="border-b-2 focus:outline-none search"
+          type="text"
+          [formControl]="searchControl"
+        />
+        <span class="absolute icon-search">icon</span>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn focus:outline-none" (click)="goToClothesBuilder()">
+        Create your outfit
+      </button>
+      <button class="btn focus:outline-none" (click)="goToHelp()">
+        Ask us to help you
+      </button>
+      <button class="btn focus:outline-none" (click)="goToStyleAndPlay()">
+        Style & play
+      </button>
+    </div>
+  </div>
+
+  <div class="virtual-wardrobe-my-outfits__title">
+    My wardrobe - Create your outfits
+  </div>
+  <div class="virtual-wardrobe-my-outfits__subtitle">
+    <button
+      *ngFor="let tab of tabs"
+      [formControl]="tab"
+      (click)="onChangeTab(tab.value)"
+      class="focus:outline-none"
+      [class.active]="activeTab.value === tab.value"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+  <div class="virtual-wardrobe-my-outfits__cards">
+    <div
+      *ngFor="let outfit of data"
+      class="virtual-wardrobe-my-outfits__cards__item"
+    >
+      <div class="gear" (click)="edit($event)">
+        <img [id]="outfit.id" src="assets/images/gear.svg.png" alt="" />
+      </div>
+
+      <div class="virtual-wardrobe-my-outfits__cards__item__title">
+        {{ outfit.name }}
+      </div>
+      <img [id]="outfit.id" [src]="outfit.pictures" (click)="toOutfit($event)" />
+      <div class="virtual-wardrobe-my-outfits__cards__item__author" id="{{outfit.author.id}}" (click)="authorPage($event)">
+        By {{ outfit.author.fullname }} /
+        {{ outfit.createdOn | date: "dd MMM yyyy" }}
+      </div>
+      <div class="virtual-wardrobe-my-outfits__cards__item__trends">
+        Trends
+        <span
+          class="virtual-wardrobe-my-outfits__cards__item__trends__label"
+          *ngIf="outfit.isPublic"
+          >Public</span
+        >
+      </div>
+      <div class="virtual-wardrobe-my-outfits__cards__item__author">
+        {{ outfit.description }}
+      </div>
+      <div class="virtual-wardrobe-my-outfits__cards__item__author">
+        <span *ngFor="let tag of outfit.tags"> {{tag}} </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="virtual-wardrobe-my-outfits__loadMore" *ngIf="hasMore">
+      <button (click)="onLoadMore()">Load More...</button>
+    </div>
+  </div>
+</div>

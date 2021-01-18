@@ -1,0 +1,54 @@
+<div class="virtual-wardrobe-my-drafts">
+  <div class="virtual-wardrobe-my-drafts__title">
+    My Insipations & My Drafts
+  </div>
+  <div class="virtual-wardrobe-my-drafts__subtitle">
+    <button
+      *ngFor="let tab of tabs"
+      [formControl]="tab"
+      (click)="onChangeTab(tab.value)"
+      class="focus:outline-none"
+      [class.active]="activeTab.value === tab.value"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+  <div class="virtual-wardrobe-my-drafts__cards">
+    <div class="d-flex" style="font-size: 2rem; margin-top: 1rem; margin-bottom: 1rem;" *ngIf="data.length == 0">
+      You don't have any outfits yet
+    </div>
+    <div
+      *ngFor="let outfit of data"
+      class="virtual-wardrobe-my-drafts__cards__item"
+    >
+      <div class="gear" (click)="edit($event)"><img [id]="outfit.id"  src="assets/images/gear.svg.png" alt=""></div>
+      <div class="virtual-wardrobe-my-drafts__cards__item__title">
+        {{ outfit.name }}
+      </div>
+      <img [id]="outfit.id" [src]="outfit.pictures" (click)="toOutfit($event)" />
+      <div
+        *ngIf="activeTab.value === 'drafts'"
+        class="virtual-wardrobe-my-drafts__cards__item__actions"
+      >
+        <span class="icon-eye">{{ outfit.views?.length }}</span>
+        <span class="icon-bubble">{{ outfit.comments?.length }}</span>
+        <span class="icon-heart">{{ outfit.likes?.length }}</span>
+      </div>
+      <div class="virtual-wardrobe-my-drafts__cards__item__author" id="{{outfit.author.id}}" (click)="authorPage($event)">
+        By {{ outfit.author.fullname }} /
+        {{ outfit.createdOn | date: "dd MMM yyyy" }}
+      </div>
+      <div class="virtual-wardrobe-my-drafts__cards__item__trends">
+        Trends
+      </div>
+      <div class="virtual-wardrobe-my-drafts__cards__item__author">
+        {{ outfit.description }}
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="virtual-wardrobe-my-drafts__loadMore" *ngIf="hasMore">
+      <button (click)="onLoadMore()">Load More...</button>
+    </div>
+  </div>
+</div>

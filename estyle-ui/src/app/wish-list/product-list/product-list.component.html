@@ -1,0 +1,79 @@
+<div class="px-4">
+  <div class="__header-grid grid gap-4 md:gap-10 font-gilroy">
+    <div>
+      <div class="uppercase font-bold text-sm md:text-base">Product name</div>
+    </div>
+    <div class="hidden md:block"></div>
+    <div>
+      <div class="uppercase font-bold text-sm md:text-base">Unit price</div>
+    </div>
+    <div>
+      <div class="uppercase font-bold text-sm md:text-base flex gap-2">
+        <div>Share all</div>
+
+        <button class="focus:outline-none" type="button">
+          <span class="icon-reply text-2xl"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-gray-300 w-full my-8"/>
+
+  <div *ngFor="let i of [1 ,2, 3]">
+
+    <div class="grid __body-grid gap-4 md:gap-12">
+      <div class="flex items-center gap-8">
+        <div class="__product-image flex justify-center items-center">
+          <img class="max-w-full"
+               src="./assets/images/wish-list/284-2841329_shirt-women-top-clothing-clothes-red-png-filler.png"
+               alt="product image">
+        </div>
+      </div>
+
+      <div class="grid __grid">
+        <div class="__product-caption flex items-center text-sm uppercase font-gilroy">
+          Gucci Great Jean for women
+        </div>
+
+        <div class="__product-price flex items-center text-base font-gilroy">$120.00</div>
+
+        <div class="__operations flex flex-col md:flex-row items-center gap-6">
+          <div>
+            <button class="px-10 py-3 bg-button uppercase text-sm font-bold font-gilroy focus:outline-none"
+                    type="button">
+              Buy me
+            </button>
+          </div>
+          <div class="flex items-center gap-6 __operations-sub">
+            <div>
+              <button class="focus:outline-none" type="button">
+                <span class="icon-reply text-2xl"></span>
+              </button>
+            </div>
+            <div>
+              <button class="rounded-full w-10 h-10 bg-white shadow focus:outline-none flex justify-center items-center"
+                      type="button">
+                <span class="icon-close text-sm"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <hr class="border-gray-300 w-full my-8"/>
+
+  </div>
+
+  <div class="flex justify-center items-center gap-4">
+    <button class="rounded-full w-6 h-6 bg-pink flex justify-center items-center focus:outline-none" type="button">
+      <span class="icon-p-left text-white"></span>
+    </button>
+    <button class="rounded-full w-6 h-6 bg-pink flex justify-center items-center focus:outline-none" type="button">
+      <span class="icon-p-right text-white"></span>
+    </button>
+  </div>
+</div>

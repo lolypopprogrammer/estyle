@@ -1,0 +1,196 @@
+.d-flex {
+  display: flex;
+}
+h1.title-outfit {
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 6px;
+  line-height: 30px;
+  color: #363636;
+  font-family: "Silver South", serif;
+  margin: 2rem 1rem 0 1rem;
+}
+.outfit {
+  position: relative;
+}
+.edit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  left: 58%;
+  color: black;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  & i {
+    margin-right: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+}
+.outfit-items {
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  img {
+    width: 40%;
+    margin: auto;
+  }
+}
+
+.card-statistic {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: revert;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+.comments {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.main-thumbnail {
+  width: 60%;
+  object-fit: cover;
+  margin: auto;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.icons i {
+  font-size: 0.9rem;
+}
+
+.icons span {
+  margin-left: 0.5rem;
+}
+.icons button {
+  display: inline-flex;
+  outline: none;
+}
+.author-thumbnail {
+  overflow: hidden;
+  border-radius: 50%;
+  height: 100%;
+  img {
+    width: 2.5rem;
+  }
+}
+.author__description {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 31px;
+  color: #241f20;
+  font-weight: 300;
+  font-family: "Montserrat";
+  margin-left: 1rem;
+  a {
+    color: #ff82b8;
+    text-decoration: underline;
+  }
+}
+
+.statistic {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.paragraph__description {
+  font-size: 1.1rem;
+  letter-spacing: 0px;
+  color: #241f20;
+  font-weight: 500;
+  font-family: "Gilroy";
+  margin-top: 1rem;
+  width: 60%;
+}
+.item-title {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  line-height: 24px;
+  color: #363636;
+  font-weight: 400;
+  font-family: "Playfair Display";
+  text-align: center;
+}
+.price {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 400;
+}
+.item-description {
+  font-size: 0.8rem;
+  color: #898989;
+  text-align: center;
+}
+.hashtags {
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #241f20;
+  font-family: "Gilroy", Sans-Serif;
+  display: flex;
+
+  span {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  button {
+    background: #fe82b8;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    padding: 0.5rem 2rem;
+  }
+}
+.collections {
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #241f20;
+  font-weight: 500;
+  font-family: "Gilroy", Sans-Serif;
+  span {
+    margin-right: 0.5rem;
+  }
+}
+
+.description-editing {
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 25%;
+    background: #fe82b8;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  .description-area {
+    width: 100%;
+    outline: none;
+    margin-top: 1rem;
+    border: 1px solid #d7d7d7;
+    padding: 1rem;
+    height: 150px;
+  }
+}

@@ -1,0 +1,17 @@
+<div>
+  <ng-content></ng-content>
+</div>
+<div class="border border-white flex items-center py-1" [ngClass]="{'border-red-500': isError}">
+  <!-- <div class="text-lg pl-3 border-r border-pink-400 pr-1 leading-none"></div> -->
+  <input [(ngModel)]="textModel" (change)="onValueChange()" class="focus:outline-none block flex-1 bg-transparent px-3" type="number">
+  <ng-select *ngIf="selectItems$ | async as selectItems"
+             class="esh-select w-1/6"
+             [items]="selectItems"
+             [(ngModel)]="selected"
+             [clearable]="false"
+             (change)="onDropdown($event)"
+             bindLabel="name"
+             bindValue="id"
+             autofocus>
+  </ng-select>
+</div>

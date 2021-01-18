@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./scss/variables";
+@import "./scss/base";
+//@import "./scss/icomoon";
+@import "./scss/tailwind-overwrite";
+@import "./scss/shared";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@400;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*body {
+  font-size: 16px;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  font-family: 'Montserrat', sans-serif;
+}*/
+
+
+.ng-select.ng-select-focused {
+  border: none;
+}
+
+.ng-select.tags-field {
+  border-radius: 0;
+}
+
+.ng-select.tags-field .ng-select-container {
+  min-height: 0px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px black;
+  border-color: black;
+}
+
+.ng-select-focused .ng-select-container {
+  border: red !important;
+}
+
+.cal-out-month .cal-cell-top {
+  display: none !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today {
+  background-color: #feeaf38a;
+}
+
+.cal-cell {
+  outline: none;
+}
+
+.cal-today.cal-out-month {
+  background: white !important;
+}
+.price-select {
+  .ng-select-container {
+    height: 5rem !important;
+
+    border: none;
+    border-bottom: 7px solid #faf160;
+
+    outline: none;
+
+    box-shadow: none !important;
+
+    background: none;
+  }
+
+  &.ng-select-opened {
+    .ng-select-container {
+      background: none;
+    }
+  }
+
+  &.ng-select-focused {
+    border-bottom: 7px solid #faf160 !important;
+  }
+
+  .ng-value-container {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+  }
+
+  .ng-option {
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .ng-select-bottom {
+    margin-top: 6px;
+  }
+}

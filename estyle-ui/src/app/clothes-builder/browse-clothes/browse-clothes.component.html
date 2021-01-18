@@ -1,0 +1,93 @@
+<div class="wrapper w-full p-4">
+  <div class="flex justify-end mt-4">
+    <div class="relative w-2/3">
+      <input
+        class="border-b-2 focus:border-pink-500 focus:outline-none w-full"
+        type="text"
+        [formControl]="searchControl"
+      />
+      <span class="absolute top-0 right-0 icon-search">icon</span>
+    </div>
+  </div>
+
+  <div *ngIf="user.type !== 'Stylist'" class="mt-8">
+    <button
+      class="m-1 focus:outline-none text-pink-600 text-sm font-playfair font-bold"
+      type="button"
+      *ngFor="let category of categories$ | async; let i = index"
+      [ngClass]="{
+        'border-b border-pink-600': category.name === (activeCategory$ | async)
+      }"
+      (click)="selectCategory(category)"
+    >
+      {{ category.name }}
+    </button>
+  </div>
+  <div *ngIf="user.type === 'Stylist'" class="form-group-item">
+    <ui-select
+      id="personalStyle"
+      name="personalStyle"
+      label="{{ 'Select user' }}"
+      [formControl]="users"
+      ngDefaultControl
+      wrap="mb-4"
+      [options]="usersList"
+      (change)="getUserItems($event)"
+    >
+    </ui-select>
+  </div>
+   <div  *ngIf="0 != (activeClothesCategory$ | async)">
+    <button class="no-outline" (click)="selectClotheCategory(0)"> 
+      < {{(activeClothesCategory$ | async).name.name.toUpperCase()}}
+    </button>
+  </div>
+
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full mt-4"
+    dndDropzone
+    dndEffectAllowed="copyMove"
+    (dndDrop)="onDrop($event)"
+    *ngIf=" 'Online Shops' == (activeCategory$ | async) || 0 != (activeClothesCategory$ | async)"
+  >
+    <button
+      class="cursor-pointer focus:bg-gray-300 focus:outline-none"
+      *ngFor="let clothe of clothes$"
+      [dndDraggable]="clothe"
+      [dndEffectAllowed]="draggable.effectAllowed"
+      [dndDisableIf]="draggable.disable"
+      (dndStart)="onDragStart(clothe, $event)"
+      (dndCopied)="onDraggableCopied($event)"
+      (dndLinked)="onDraggableLinked($event)"
+      (dndMoved)="onDraggableMoved($event)"
+      (dndCanceled)="onDragCanceled($event)"
+      (dndEnd)="onDragEnd($event)"
+      (focus)="select(clothe)"
+    >
+      <div class="w-full flex justify-center items-center h-24 xl:h-32 p-2">
+        <img class="max-w-full max-h-full" src="{{ clothe.pictures }}" alt="" />
+      </div>
+
+      <div class="text-xs mb-2 mt-2 uppercase">{{ clothe.name }}</div>
+    </button>
+  </div>
+
+
+  
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full mt-4"
+    *ngIf="0 == (activeClothesCategory$ | async) && 'Online Shops' != (activeCategory$ | async)"
+  >
+    <button
+      class="cursor-pointer focus:bg-gray-300 focus:outline-none"
+      *ngFor="let clothesCategory of clothesCategories$ | async"
+      (focus)="selectClotheCategory(clothesCategory)"
+
+    >
+      <div class="w-full flex justify-center items-center h-24 xl:h-32 p-2">
+        <img class="max-w-full max-h-full" src="{{ clothesCategory.logo }}" alt="" />
+      </div>
+
+      <div class="text-xs mb-2 mt-2 uppercase">{{ clothesCategory.name.name }}</div>
+    </button>
+  </div>
+</div>

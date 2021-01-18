@@ -1,0 +1,44 @@
+<div class="search-wrapper">
+  <div class="content-attributes content">
+    <h3 class="title-category__search search__filter">occasion</h3>
+    <div class="search__filter" *ngFor="let occasion of occasions">
+      <label class="checkbox__search" [for]="occasion.name"></label>
+      <input hidden="true" class="" type="checkbox" [id]="occasion.name" />
+      <label
+        class="container__checkbox"
+        (change)="clickMe(occasion.id, state.checked)"
+        >{{ occasion.name }}
+        <input #state type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <div class="content-attributes content">
+    <h3 class="title-category__search search__filter">body shapes</h3>
+    <div class="search__filter" *ngFor="let shape of bodyShapes">
+      <label class="checkbox__search" [for]="shape.name"></label>
+      <input hidden="true" class="" type="checkbox" [id]="shape.name" />
+      <label
+        class="container__checkbox"
+        (change)="shapeUpdate(shape.id, state.checked)"
+        >{{ shape.name }}
+        <input #state type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <div class="content-attributes content">
+    <h3 class="title-category__search search__filter">personal styles</h3>
+    <div class="search__filter" *ngFor="let style of personalStyle">
+      <label class="checkbox__search" [for]="style.name"></label>
+      <input hidden="true" class="" type="checkbox" [id]="style.name" />
+      <label
+        class="container__checkbox"
+        (change)="styleUpdate(style.id, state.checked)"
+        >{{ style.name }}
+        <input #state type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+</div>

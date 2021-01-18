@@ -1,0 +1,41 @@
+// Bodytype
+{
+    "_id": "4d3ed089fb60ab534684b7e9",
+    "name": "Pear shape"
+}
+
+// StyleGuideItem
+{
+    "bodytype": "triangular",
+    "clothingCategory": "507f191e810c19729de860ea", // Ref to Top clothingCategory
+    "title": "Best Tops for you",
+    "description": "Lorem ipsum dolor sit amet",
+    "variations": [
+        {
+            "variation": "507f1f77bcf86cd799439011",
+            "description": "Long sleeves top fits your body type for some reason...",
+            "pictures": "https://tops-pictures.com/pear-shaped"
+        }
+    ]
+}
+
+// clothingCategory
+{
+    "_id": "507f191e810c19729de860ea",
+    "name": "Top",
+    "pictures": ["https://tops-pictures.com"],
+}
+
+// ItemVariation
+{
+    "_id": "507f1f77bcf86cd799439011",
+    "type": "507f1f77bcf86cd799439011",
+    "name": "Long sleeves",
+    "pictures": ["https://tops-pictures.com"],
+}
+
+// ItemVariationType
+{
+    "_id": "507f1f77bcf86cd799439011",
+    "name": "Sleeves",
+}

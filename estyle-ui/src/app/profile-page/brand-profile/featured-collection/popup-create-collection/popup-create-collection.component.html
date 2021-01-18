@@ -1,0 +1,61 @@
+<div
+  class="close-pop-up"
+  style="width: 100%; height: 100%; z-index: -1; position: absolute"
+  (click)="closePopup($event)"
+></div>
+<div class="page-add-form container" style="z-index: 1">
+  <button class="close-popup" (click)="closePopup($event)">
+    <img src="../../../../../assets/images/close.png" alt="" />
+  </button>
+  <div class="page-add-form-photo">
+    <div class="page-add-form-photo-title">
+      Add Photo
+      <span>
+        <label for="picture">Choose</label>
+        <input
+          (change)="onPictureSelected($event)"
+          id="picture"
+          name="picture"
+          accept="image/png, image/jpeg"
+          type="file"
+          (change)="onBackgroundChange($event)"
+        />
+      </span>
+    </div>
+    <div class="preview-wrapper">
+      <div
+        class="preview"
+        [ngStyle]="{ 'background-image': 'url(' + picture + ')' }"
+      ></div>
+    </div>
+    <div class="controls">
+      <button *ngIf="!id" class="btn bg-yellow" (click)="submit()">Save</button>
+      <button *ngIf="id" class="btn bg-yellow" (click)="patch()">Save</button>
+      <button *ngIf="id" class="btn bg-yellow" (click)="delete()">
+        Delete
+      </button>
+    </div>
+  </div>
+  <div class="fields">
+    <ui-input
+      placeholder="Title"
+      id="title"
+      name="title"
+      label="Title"
+      [formControl]="formGroupCollection.get('title')"
+      value="{{ title }}"
+      ngDefaultControl
+      wrap="mb-4"
+    ></ui-input>
+    <ui-select
+      id="color"
+      name="color"
+      label="{{ color || 'Select color' }}"
+      [formControl]="formGroupCollection.get('color')"
+      ngDefaultControl
+      wrap="mb-4"
+      [options]="colorOptions"
+    >
+    </ui-select>
+  </div>
+</div>

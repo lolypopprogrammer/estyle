@@ -1,0 +1,33 @@
+.featured-collection {
+//   display: flex;
+//   justify-content: center;
+  & > div {
+    &:not(:child(4n)) {
+      margin-left: 18px;
+    }
+  }
+}
+
+.d-flex {
+  margin: auto;
+  width: 85%;
+  display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-auto-columns: auto;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+}
+.col-lg-3 {
+  margin: 0.5rem;
+//   width: 20%;
+}
+.more {
+  margin-top: 2rem;
+  display: flex;
+  button {
+    margin: auto;
+    border: 2px solid #ff82b8;
+    padding: 0.8rem 4rem;
+  }
+}

@@ -1,0 +1,67 @@
+@import "../../../scss/variables";
+
+@mixin sectionTitle {
+  position: relative;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 6.4px;
+  line-height: 1;
+  color: $textColor;
+  text-transform: uppercase;
+  //padding-left: 15%;
+  margin: 6rem 0 5rem 0;
+  width: 44%;
+  right: 80px;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-100vw + 100%);
+    bottom: -12px;
+    height: 4px;
+    background: $textColor;
+    width: calc(100vw - 7.4px);
+  }
+}
+.d-flex {
+    margin: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.col-lg-3 {
+    margin: 0.5rem;
+    width: 25%;
+}
+
+.btn {
+  background: $primaryColor;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  width: 180px;
+  min-height: 40px;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  &:not(:first-child) {
+    margin-left: 28px;
+  }
+}
+.featured-collection {
+  &-title {
+    display: block;
+    @include sectionTitle;
+  }
+
+  &-fashion-combos {
+    display: block;
+    @include sectionTitle;
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,37 @@
+footer {
+  color: #241f20;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-main {
+  background-color: #feeaf3;
+}
+
+.footer-copyright {
+  @media (max-width: 768px) {
+    background-color: #feeaf3;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+.footer-col {
+  position: relative;
+  padding-top: 0.75rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 8rem;
+    background-color: #3e3d34;
+    top: 0;
+    left: 0;
+  }
+}

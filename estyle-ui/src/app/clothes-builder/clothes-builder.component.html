@@ -1,0 +1,139 @@
+<div class="wrapper w-screen flex">
+  <div class="flex-1 flex flex-col">
+    <div
+      class="dropzone w-full h-full border-2 relative p-4"
+      [dndDropzone]=""
+      (dndDragover)="onDragover($event)"
+      (dndDrop)="onDrop($event)"
+      #containerRef
+    >
+
+      <div class="clothes-builder-border"></div>
+
+      <div class="absolute z-10 form-group">
+        <div class="form-group-item">
+          <!-- <input
+            class="border-b-2 focus:outline-none w-2/1"
+            type="text"
+            [formControl]="title"
+          /> -->
+
+          <ui-input
+            placeholder=""
+            id="title"
+            name="title"
+            label="Title"
+            [formControl]="title"
+            value="{{this.title.value || ''}}"
+            ngDefaultControl
+            wrap="mb-4"
+          ></ui-input>
+        </div>
+        <div class="form-group-item">
+          <ui-select
+            id="visibilityState"
+            name="visibilityState"
+            label="{{ 'Select visibility' }}"
+            [formControl]="visibilityState"
+            value="{{this.visibilityState.value}}"
+            ngDefaultControl
+            wrap="mb-4"
+            [options]="VISIBILITY_STATES"
+          >
+          </ui-select>
+        </div>
+        <div class="form-group-item">
+          <ui-select
+            id="bodyShape"
+            name="bodyShape"
+            label="{{ 'Select body shape' }}"
+            [formControl]="bodyShape"
+            value="{{this.bodyShape.value}}"
+            ngDefaultControl
+            wrap="mb-4"
+            [options]="bodyShapeList"
+          >
+          </ui-select>
+        </div>
+        <div class="form-group-item">
+          <ui-select
+            id="personalStyle"
+            name="personalStyle"
+            label="{{ 'Select personal style' }}"
+            [formControl]="personalStyle"
+            value="{{this.personalStyle.value}}"
+            ngDefaultControl
+            wrap="mb-4"
+            [options]="personalStyleList"
+          >
+          </ui-select>
+        </div>
+        <div class="form-group-item">
+          <ui-select
+            id="occasion"
+            name="occasion"
+            label="{{ 'Select occasion' }}"
+            [formControl]="occasion"
+            value="{{this.occasion.value}}"
+            ngDefaultControl
+            wrap="mb-4"
+            [options]="occasionList"
+          >
+          </ui-select>
+        </div>
+        <div *ngIf="isBrand" class="form-group-item">
+          <ui-select
+            id="collection"
+            name="collection"
+            label="{{ 'Select collection' }}"
+            [formControl]="collection"
+            value="{{this.collection.value}}"
+            ngDefaultControl
+            wrap="mb-4"
+            [options]="collectionList"
+          >
+          </ui-select>
+        </div>
+      </div>
+
+      <app-toolbar
+        class="absolute z-10"
+        [style.top.em]="7.8"
+        [style.right.em]="1"
+      ></app-toolbar>
+
+      <app-operations
+        class="absolute z-10"
+        [style.bottom.em]="4"
+        [hiddenOperations]="hiddenOperations"
+        [id]="id"
+        [isPublic]="isPublic"
+        [isDraft]="isDraft"
+      ></app-operations>
+
+      <app-clothe-info
+        class="absolute z-10"
+        [style.top.em]="1"
+        [style.right.em]="1"
+      ></app-clothe-info>
+
+      <div
+        class="absolute z-9 top-0 left-0 w-full h-full flex justify-center items-center text-gray-600"
+        [hidden]="!resizing"
+        style="display: none"
+      >
+        Loading..
+      </div>
+
+      <canvas #canvasRef></canvas>
+    </div>
+
+    <app-toolbar-bottom #toolbarBottomRef></app-toolbar-bottom>
+  </div>
+
+  <app-browse-clothes
+    class="w-1/3 overflow-auto"
+    (currentAuthor)="changeAuthor($event)"
+    #browseClothesRef
+  ></app-browse-clothes>
+</div>

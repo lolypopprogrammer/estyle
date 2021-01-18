@@ -1,0 +1,43 @@
+$colorLight: #fff;
+$colorDark: #000;
+
+.active {
+  outline: 5px solid #ff82b8;
+}
+
+.featured-collection-card {
+  background-color: #fffbf6;
+  background-size: cover;
+  width: 100%;
+  height: 542px;
+  cursor: pointer;
+  .gear {
+    position: absolute;
+    width: 30px;
+    top: -15px;
+    right: -15px;
+  }
+  &--inner {
+    width: 100%;
+
+    h3 {
+      padding-top: 24px;
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      font-family: sans-serif;
+      line-height: 1.17;
+      letter-spacing: normal;
+
+      &.light {
+        color: $colorLight;
+      }
+      &.dark {
+        color: colorDark;
+      }
+    }
+  }
+}

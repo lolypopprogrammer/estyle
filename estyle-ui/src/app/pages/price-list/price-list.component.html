@@ -1,0 +1,39 @@
+<div class="bg-pink pb-10 md:pb-32">
+  <app-page-info title="Price list" image="./assets/images/price-list/592.png" titlePosition="left">
+    Title Text, <br>
+    Enjoy Your Style Ride With eStyleShaker
+  </app-page-info>
+
+  <div class="my-8 hidden md:block">
+    <app-price-list-menu></app-price-list-menu>
+  </div>
+
+  <div class="container title font-playfair font-bold uppercase text-right text-pink-400 mt-1 md:mt-0">
+    Packages
+  </div>
+
+  <div class="container my-8">
+    <app-price-plan class="block"
+                    *ngFor="let packageItem of packages$ | async | slice: 0: 3; let i = index"
+                    [ngClass]="{'mt-12': i > 0}"
+                    [attr.id]="packageItem.scrollElement"
+                    [packageItem]="packageItem"
+                    [direction]="(i % 2) === 0 ? 'right' : 'left'">
+    </app-price-plan>
+  </div>
+</div>
+
+<div class="title --second font-playfair font-bold uppercase text-center text-pink-400 my-8"
+     id="scroll-individual-service">
+  Individual services
+</div>
+
+<div class="container my-8">
+  <app-price-plan class="block"
+                  *ngFor="let packageItem of packages$ | async | slice: 3: 7; let i = index"
+                  [ngClass]="{'mt-12': i > 0}"
+                  [attr.id]="packageItem.scrollElement"
+                  [packageItem]="packageItem"
+                  [direction]="(i % 2) === 0 ? 'right' : 'left'">
+  </app-price-plan>
+</div>

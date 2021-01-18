@@ -1,0 +1,34 @@
+.title {
+  font-size: 3.75rem;
+  letter-spacing: 2.175rem;
+
+  &.--second {
+    margin-top: -1.8rem;
+  }
+}
+
+.price-title {
+  line-height: 24.04px;
+  letter-spacing: 4.81px;
+}
+
+.bg-pink {
+  background-color: var(--pink-3);
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding-right: .5rem;
+
+    font-size: 1.6rem;
+    letter-spacing: 0.9rem;
+
+    &.--second {
+      margin-top: -.3rem;
+      padding-right: 0;
+
+      font-size: 1.4rem;
+      letter-spacing: 0.38rem;
+    }
+  }
+}

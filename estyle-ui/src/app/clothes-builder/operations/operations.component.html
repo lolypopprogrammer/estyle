@@ -1,0 +1,25 @@
+<div class="flex flex-col">
+  <button class="border-2 border-pink-600 px-5 py-1 mb-4 focus:outline-none bg-white uppercase font-normal text-xs"
+          (click)="select(saveOperation)"
+  >
+    {{saveOperation.name}}
+  </button>
+  <div>
+    <button class="border-2 border-pink-600 px-5 py-1 mb-4 focus:outline-none bg-white uppercase font-normal text-xs"
+            (click)="toggleSaveVisibilityDropdown()"
+            [id]="stateButtonId"
+    >
+      Save as..
+    </button>
+    <div *ngIf="saveDropdownIsVisible" class="dropdown">
+      <button
+        class="dropdown-item border-2 border-pink-600 px-5 py-1 focus:outline-none bg-white uppercase font-normal text-xs"
+        type="button"
+        *ngFor="let operation of saveOperations"
+        (click)="select(operation)"
+      >
+        {{ operation.name }}
+      </button>
+    </div>
+  </div>
+</div>

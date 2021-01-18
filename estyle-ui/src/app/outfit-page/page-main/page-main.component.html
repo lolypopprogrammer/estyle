@@ -1,0 +1,99 @@
+<div class="main">
+  <div class="d-flex">
+    <h1 class="title-outfit">
+      {{name}}
+    </h1>
+  </div>
+  <div class="collection-outfit">
+    <div class="outfit">
+      <div class="d-flex">
+        <button *ngIf="isOwner" (click)="patch()" class="edit"><i class="material-icons">create</i> edit</button>
+        <img class="main-thumbnail" src="{{image}}" alt="main image">
+        <div class="outfit-items">
+          <div *ngFor="let item of brandItem">
+            <div class="item">
+                <img src="{{item.pictures[0]}}" alt="">
+                <div class="item-title">
+                <p>{{item.name}}</p>
+                </div>
+                <div class="price">
+                <p>{{item.price}}$</p>
+                </div>
+                <div class="item-description">
+                <p>
+                    {{item.link}}
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="signature">
+
+        <div class="statistic">
+          <div class="d-flex">
+            <div class="author-thumbnail">
+              <img src="assets/images/ai.png" alt="author">
+            </div>
+            <div class="author__description">
+              <span>by <a href="#">{{author}}</a></span>
+            </div>
+          </div>
+          <div class="card-statistic">
+            <div class="comments icons">
+              <i class="material-icons">forum</i>
+              <span>{{comments}}</span>
+            </div>
+            <div class="likes icons">
+              <i class="material-icons" >favorite</i>
+              <span>{{likes.length}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <div class="paragraph__description">
+            <p *ngIf="!isOwner">
+              {{description}}
+            </p>
+            <div *ngIf="isOwner" class="description-editing">
+              <textarea #descriptionPost class="description-area" name="description" id="description" cols="10" rows="10">{{description || 'description'}}</textarea>
+              <button (click)="save(descriptionPost.value)">save</button>
+            </div>            
+          </div>
+          <div class="hashtags">
+            <div *ngIf="!formOpened; else create">
+              <span *ngFor="let tag of tags" (click)="toHashtagPage($event)">{{tag}}</span>
+              <button (click)="openForm()">add</button>
+            </div> 
+            <ng-template #create>
+              <ui-input 
+                placeholder="Tag"
+                id="tag"
+                name="tag"
+                label="Tag"
+                [formControl]="formGroup.get('tag')"
+                value="{{tagOut}}"
+                ngDefaultControl
+                wrap="mb-4"
+              ></ui-input>
+              <button #create (click)="addHashtag()">add</button>
+            </ng-template>
+          </div>
+          <div class="collections">
+            <span>Collection 1</span><span>Collection 1</span><span>Collection 1</span><span>Collection 1</span>
+          </div>
+          <div class="share">
+            <span>Share Link:</span>
+            <i class="material-icons"><a href="">facebook</a></i>
+            <i class="material-icons"><a href="">facebook</a></i>
+            <i class="material-icons"><a href="">facebook</a></i>
+            <i class="material-icons"><a href="">facebook</a></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

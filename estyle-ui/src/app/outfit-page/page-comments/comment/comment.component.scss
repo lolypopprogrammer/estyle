@@ -1,0 +1,50 @@
+.author-thumbnail {
+  overflow: hidden;
+  height: 100%;
+  img {
+    width: 8rem;
+  }
+}
+.content {
+  margin-left: 3rem;
+  width: 100%;
+
+  .content-header {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .info {
+      font-size: 0.9rem;
+      line-height: 24px;
+      color: #959595;
+      font-family: "Gilroy", sans-serif;
+    }
+  }
+  .content-footer {
+    font-size: 0.9rem;
+    line-height: 24px;
+    color: #000000;
+    font-family: "Gilroy", sans-serif;
+  }
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+
+  & .edit button {
+    display: flex;
+    margin-right: 2rem
+  }
+  & button {
+    padding: 0.5rem;
+    border: 1px solid grey;
+  }
+}
+
+.comments-container {
+  display: flex;
+  margin-bottom: 4rem;
+}

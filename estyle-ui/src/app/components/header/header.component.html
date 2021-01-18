@@ -1,0 +1,76 @@
+<header class="header flex justify-between items-center px-4 sm:px-4 md:px-4 lg:px-12 xl:px-12 py-8"
+        [ngClass]="{'--bg-pink': isBgPink, '--shadow': !isBgPink}"
+        [ngStyle]="{ background: background }">
+  <div class="logo">
+    <a [routerLink]="['/']" href="javascript:void(0)">
+      <img class="logo-img" src="./assets/images/logo.png" alt="logo">
+    </a>
+  </div>
+  <div>
+    <!-- <div class="horizontal-menu">
+        <a class="menu flex items-center justify-center" *ngIf="!isAuthorized" [routerLink]="['/account/login']" href="javascript:void(0)">
+          <i class="icon-menu"></i>
+        </a>
+        <a class="flex items-center justify-center" *ngIf="isAuthorized" (click)="navigateMyProfile()" href="javascript:void(0)">
+          profile
+        </a>
+        <a class="flex items-center justify-center" *ngIf="isAuthorized" (click)="logout()" href="javascript:void(0)">
+          logout
+        </a>
+    </div> -->
+  </div>
+
+  <div class="flex gap-4">
+    <ul class="list-none m-0 p-0 flex items-center gap-8 menu">
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">How it Works</a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">Blog</a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">Style Avenue</a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">About</a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2"
+           routerLink="/price-list"
+           routerLinkActive="border-b-2 border-black">
+          Pricelist
+        </a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2"
+           routerLink="/video-channel"
+           routerLinkActive="border-b-2 border-black">
+          Video Channel
+        </a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">Trending</a>
+      </li>
+      <li>
+        <a class="text-sm font-bold pb-2" href="#">Testamonials</a>
+      </li>
+      <li *ngIf="!isAuthorized">
+        <a class="text-sm font-bold pb-2" [routerLink]="['/account/login']" href="javascript:void(0)">Log in</a>
+      </li>
+      <li *ngIf="isAuthorized">
+        <a class="text-sm font-bold pb-2" (click)="logout()" href="javascript:void(0)">Log out</a>
+      </li>
+    </ul>
+
+    <div class="avatar rounded-full w-8 h-8" *ngIf="isAuthorized"
+         [ngStyle]="{ backgroundImage: 'url(' + authorThumbnail + ')' }"
+         (click)="navigateMyProfile()">
+    </div>
+
+    <div class="mobile-menu w-12 h-12 bg-black p-2 flex flex-col justify-center items-center gap-1 cursor-pointer">
+      <div class="h-1 bg-white w-full"></div>
+      <div class="h-1 bg-white w-full"></div>
+      <div class="h-1 bg-white w-full"></div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+<div class="comments">
+  <h3 style="margin: 2rem">{{comments.length}} comments</h3>
+
+  <div class="comments-container" *ngFor="let comment of comments">
+    <app-comment-component
+      [comment]="comment"
+    ></app-comment-component>
+  </div>
+  <form class="d-flex" action="">
+    <h3>add comments</h3>
+    <textarea #comment class="add-comments__text" name="" id="comment" cols="30" rows="5" placeholder="Message"></textarea>
+    <button (click)="submit(comment.value)" class="comment-send">submit form</button>
+  </form>
+</div>

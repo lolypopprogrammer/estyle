@@ -1,0 +1,24 @@
+<div class="featured-collection d-flex container">
+  <div *ngFor="let card of cards" class="col-lg-3">
+    <app-featured-collection-card
+      [image]="card.imageCollection"
+      [title]="card.title"
+      [href]="card.href"
+      [color]="card.color"
+      [isChanging]="isChanging"
+      [id]="card.id"
+      [active]="activeId"
+      (update)="updateCollection()"
+      (filter)="occasionFilter($event)"
+    >
+    </app-featured-collection-card>
+  </div>
+</div>
+<div class="more" style="margin-bottom: 5rem" *ngIf="hasMore">
+  <button
+    class="text-black font-bold py-3 px-1 bg-white focus:outline-none"
+    (click)="updateCollection()"
+  >
+    load more...
+  </button>
+</div>

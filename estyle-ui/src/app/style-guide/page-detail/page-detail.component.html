@@ -1,0 +1,45 @@
+<div class="bg-white pl-8 p-10">
+  <div class="relative">
+    <div class="text-base uppercase font-normal text-gray-500">Your body</div>
+    <div class="text-6xl font-playfair uppercase">Detail body type</div>
+  </div>
+
+  <div *ngIf="quiz$ | async as quiz" class="grid grid-cols-2 gap-12" [style.margin-top.rem]="-2.1">
+    <div class="flex-1">
+      <div>
+        <img class="w-full" src="./assets/images/2743.png" alt="">
+      </div>
+      <div class="text-5xl">
+        Horizontal <br>
+        body shape
+      </div>
+      <div class="text-sm uppercase">
+        {{ getBodytype(quiz.horizontalBodyShape) }}
+      </div>
+
+      <hr class="border-pink-300 border-4 my-3">
+
+      <div class="text-base" [innerHtml]="getHorizontalBodytypeContent(quiz.horizontalBodyShape)"></div>
+    </div>
+
+    <div class="flex-1">
+      <div>
+        <img class="w-full" src="./assets/images/2471790.png" alt="">
+      </div>
+      <div class="text-5xl">
+        Vertical body <br> shapes
+      </div>
+      <div class="text-sm uppercase">
+        {{ getVerticalBodytype(quiz.verticalBodyShape) }}
+      </div>
+
+      <hr class="border-pink-300 border-4 my-3">
+
+      <div class="text-base" [innerHtml]="getVerticalBodytypeContent(quiz.verticalBodyShape)"></div>
+
+      <div class="mt-4">
+        <img class="w-full" src="./assets/images/2-layers.png">
+      </div>
+    </div>
+  </div>
+</div>

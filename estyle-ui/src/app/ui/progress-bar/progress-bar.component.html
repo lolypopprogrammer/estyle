@@ -1,0 +1,7 @@
+<div class="flex items-center">
+  <div class="font-playfair text-lg text-pink-400">{{ progress.toFixed(0) }}%</div>
+
+  <div class="ml-2 relative w-full h-2 bg-white">
+    <div class="absolute bg-pink-400 h-full" [style.width.%]="progress"></div>
+  </div>
+</div>

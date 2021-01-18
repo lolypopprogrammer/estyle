@@ -1,0 +1,19 @@
+<div
+  class="wardrobe-category-card flex relative"
+  [ngClass]="{
+    active: current == id
+  }"
+  [ngStyle]="{
+    'background-image': 'url(' + image + ')'
+  }"
+>
+  <div class="wardrobe-category-card--inner" (click)="clickMe(id)">
+    <h3
+      [ngClass]="{
+        light: color === 'light',
+        dark: color === 'dark'
+      }"
+      [innerHTML]="title"
+    ></h3>
+  </div>
+</div>

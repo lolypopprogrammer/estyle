@@ -1,0 +1,25 @@
+<div class="floating {{ wrap }}">
+  <label
+    [for]="id"
+    class="floating__label tags-label"
+    [ngClass]="{ active: active, focused: focused }"
+    [attr.data-content]="label"
+  >
+    <span class="hidden--visually">{{ label }}</span>
+  </label>
+  <ng-select
+    #tagsField
+    class="tags-field floating__input"
+    [id]="id"
+    [items]="items"
+    [(ngModel)]="items"
+    [ngClass]="{ active: active }"
+    [addTag]="true"
+    [multiple]="true"
+    [selectOnTab]="true"
+    (focus)="fieldFocused()"
+    (blur)="fieldBlurred()"
+    (change)="onChange($event)"
+    [isOpen]="false">
+  </ng-select>
+</div>

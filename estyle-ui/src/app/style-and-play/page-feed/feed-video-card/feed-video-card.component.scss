@@ -1,0 +1,95 @@
+.feed-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card-statistic {
+  display: flex;
+  flex-direction: revert;
+  margin-top: auto;
+}
+
+.signature {
+  display: flex;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+.comments {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.main-thumbnail {
+  width: 100%;
+  object-fit: contain;
+}
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.icons i {
+  font-size: 0.9rem;
+}
+
+.icons span {
+  margin-left: 0.5rem;
+
+}
+.icons button {
+  display: inline-flex;
+  outline: none;
+
+}
+.author-thumbnail {
+  overflow: hidden;
+  border-radius: 50%;
+  height: 100%;
+  img {
+    width: 4rem;
+  }
+}
+.description {
+  line-height: 1rem;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  color: #241f20;
+  font-weight: 400;
+  font-family: "Playfair Display";
+  .author__description {
+    font-size: 0.8rem;
+    line-height: 31px;
+    color: #241f20;
+    font-weight: 300;
+    font-family: "Montserrat";
+    a {
+      color: #ff82b8;
+      text-decoration: underline;
+    }
+  }
+}
+
+.feed-card-image {
+  cursor: pointer;
+  width: 300px;
+  height: 280px;
+  background-position: center;
+  text-align: center;
+  background-size: cover;
+  display: flex;
+
+  iframe {
+    height: 280px;
+    backdrop-filter: blur(5px);
+  }
+
+  img {
+    margin: auto;
+    width: 90px;
+  }
+}

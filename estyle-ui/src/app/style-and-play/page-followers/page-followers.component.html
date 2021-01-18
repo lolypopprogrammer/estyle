@@ -1,0 +1,28 @@
+<div class="followers-component container mt-5">
+  <div class="followers-wrapper" *ngIf="cards.length == 0">
+    <p>You do not follow anyone yet</p>
+  </div>
+  <div class="followers-filters" *ngIf="cards.length != 0"> 
+    <button
+      class="followers-filters__button"
+      *ngFor="let category of categories$ | async; let i = index"
+      [ngClass]="{
+        'border-b border-pink-600': category.name === (activeCategory$ | async)
+      }"
+      (click)="selectCategory(category)"
+    >
+      {{ category.name }}
+    </button>
+  </div>
+  <div class="followers-wrapper">
+    
+    <div class="followers-list" *ngFor="let card of cards">
+      <img (click)="toProfilePage($event)" [id]="card.id" src="{{card.thumbnailBrandData}}" alt="followers image">
+      <p class="followers-name" (click)="toProfilePage($event)" [id]="card.id">{{card.firstName + ' ' + card.lastName}}</p>
+      <div class="followers-info">
+        <p><b>{{card.totalOutfit}}</b> Outfits</p>
+        <p><b>{{card.totalLikes}}</b> Likes</p>
+      </div>
+    </div>
+  </div>
+</div>

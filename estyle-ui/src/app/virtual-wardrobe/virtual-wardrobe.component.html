@@ -1,0 +1,74 @@
+<div class="virtual-wardrobe">
+  <div class="virtual-wardrobe-header">
+    <h1 class="text-center relative">Virtual Wardrobe</h1>
+    <div class="mb-8 relative">
+      <div class="container">
+        <img
+          src="assets/images/style-avenue.jpg"
+          class="w-100"
+          alt="virtual-wardrobe"
+        />
+        <app-breadcrumbs></app-breadcrumbs>
+      </div>
+    </div>
+    <div class="virtual-wardrobe-video container mb-8 relative">
+      <video
+        class="virtual-wardrobe-video-player"
+        poster="assets/images/style-avenue.jpg"
+        width="60%"
+        controls
+      >
+        <source
+          src="assets/video/virtual-wardrobe.mp4"
+          type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div class="virtual-wardrobe-video-text">
+        <h2 class="virtual-wardrobe-video-text-title">Video Title Fashion</h2>
+
+        <p class="virtual-wardrobe-video-text-content">
+          Check out the video to see how Estyleshaker can brighten your fashion
+          life & spice up your wardrobe. Estyleshaker will help you change your
+          attitude towards shopping and choose the right clothes that you will
+          not only look your best in, but feel confident and empowered. Slowly
+          but surely, we'll reveal fashion secrets curated especially for you.
+          Make friends with Estyleshaker and create your unique style.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="virtual-wardrobe-my container">
+    <h2 class="virtual-wardrobe-my-title">My Wardrobe</h2>
+    <div class="virtual-wardrobe-my-categories">
+      <div class="virtual-wardrobe-my-categories--inner">
+        <div *ngFor="let card of cards">
+          <app-wardrobe-category-card
+            [image]="card.image"
+            [title]="card.title"
+            [href]="card.href"
+            [color]="card.color"
+            [id]="card.id"
+          >
+          </app-wardrobe-category-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="virtual-wardrobe-my-clothes">
+      <app-virtual-wardrobe-my-clothes></app-virtual-wardrobe-my-clothes>
+    </div>
+
+    <div class="virtual-wardrobe-my-lookbook">
+      <h2 class="virtual-wardrobe-my-title">My Lookbook</h2>
+      <app-virtual-wardrobe-my-outfits></app-virtual-wardrobe-my-outfits>
+      <app-virtual-wardrobe-my-drafts></app-virtual-wardrobe-my-drafts>
+    </div>
+
+    <div class="virtual-wardrobe-style-calendar">
+      <h2 class="virtual-wardrobe-my-title">Style Calendar</h2>
+      <app-virtual-wardrobe-style-calendar></app-virtual-wardrobe-style-calendar>
+    </div>
+  </div>
+</div>

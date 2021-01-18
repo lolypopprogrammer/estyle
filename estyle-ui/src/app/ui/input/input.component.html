@@ -1,0 +1,17 @@
+<div class="floating {{ wrap }} {{ class }}">
+  <input
+    [id]="id"
+    class="floating__input inverted"
+    [name]="name"
+    [type]="type"
+    [placeholder]="label"
+    [value]="value || ''"
+  />
+  <label
+    [for]="id"
+    class="floating__label inverted"
+    [attr.data-content]="label"
+  >
+    <span class="hidden--visually">{{ label }}</span>
+  </label>
+</div>

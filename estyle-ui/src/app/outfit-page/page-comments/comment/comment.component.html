@@ -1,0 +1,25 @@
+<div class="comments-container">
+  <div class="author-thumbnail">
+    <img src="assets/images/ai.png" alt="author">
+  </div>
+  <div class="content">
+    <div class="content-header">
+      <div class="info">
+        {{comment.author.firstName}} {{Date(comment.createdOn)}}
+      </div>
+      <div class="settings">
+        <div class="edit" *ngIf="comment.isOwner">
+          <button><i class="material-icons">create</i>Edit</button>
+        </div>
+        <div class="reply">
+          <button>Reply</button>
+        </div>
+      </div>
+    </div>
+    <div class="content-footer">
+      <p *ngIf="!comment.isChanging">
+        {{comment.content}}
+      </p>
+    </div>
+  </div>
+</div>

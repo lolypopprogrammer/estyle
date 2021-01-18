@@ -1,0 +1,15 @@
+<div class="h-full font-playfair" *ngIf="clothe$ | async as clothe">
+  <div class="w-20 h-20 flex justify-center items-center">
+    <img class="max-h-full max-h-full"
+         src="{{ clothe?.logo }}"
+         [attr.alt]="clothe?.name">
+  </div>
+
+  <div class="underline font-thin text-center">
+    {{ clothe?.name }}
+  </div>
+
+  <div class="text-center">
+    {{ clothe?.price }}$
+  </div>
+</div>

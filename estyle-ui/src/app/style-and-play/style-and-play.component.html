@@ -1,0 +1,15 @@
+<div class="bg-main flex flex-col justify-center items-center">
+  <div class="main-wrapper">
+    <app-page-main></app-page-main>
+    <app-page-category></app-page-category>
+  </div>
+  <app-page-feed style="width: 100%"></app-page-feed>
+  <div class="feed-component mt-5">
+    <component-title [title]="'Videos'"></component-title>
+    <app-page-videos></app-page-videos>
+  </div>
+  <div class="feed-component mt-5">
+    <component-title [title]="'Follow'"></component-title>
+    <app-page-followers></app-page-followers>
+  </div>
+</div>

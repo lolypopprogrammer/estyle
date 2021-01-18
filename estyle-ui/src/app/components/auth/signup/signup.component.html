@@ -1,0 +1,65 @@
+<div class="auth-card bg-darkPink md:px-32 px-8 py-8">
+  <div class="flex flex-row justify-center mt-4 mb-12 flex-wrap">
+    <a [routerLink]="['/account/login']" routerLinkActive="active" class="mx-6 my-4 block">Log In</a>
+    <a [routerLink]="['/account/sign-up']" routerLinkActive="active" class="mx-6 my-4 block">Sign Up</a>
+  </div>
+  <form class="fields" (ngSubmit)="signup()">
+    <app-input-field
+      id="firstName"
+      ngDefaultControl
+      name="firstName"
+      label="First Name"
+      [formControl]="formGroup.get('firstName')"
+      wrap="mb-3"
+    ></app-input-field>
+    <app-input-field
+      id="lastName"
+      ngDefaultControl
+      name="lastName"
+      label="Last Name"
+      [formControl]="formGroup.get('lastName')"
+      wrap="mb-3"
+    ></app-input-field>
+    <app-input-field
+      id="email"
+      ngDefaultControl
+      name="email"
+      label="Email"
+      [formControl]="formGroup.get('email')"
+      wrap="mb-3"
+    ></app-input-field>
+    <app-input-field
+      id="phone"
+      ngDefaultControl
+      name="phone"
+      label="Phone"
+      [formControl]="formGroup.get('phone')"
+      wrap="mb-3"
+    ></app-input-field>
+    <app-input-field
+      id="password"
+      ngDefaultControl
+      name="password"
+      label="Password"
+      type="password"
+      [formControl]="formGroup.get('password')"
+      wrap="mb-3"
+    ></app-input-field>
+    <app-input-field
+      id="confirmPassword"
+      ngDefaultControl
+      name="confirmPassword"
+      label="Confirm Password"
+      type="password"
+      [formControl]="formGroup.get('confirmPassword')"
+      wrap="mb-3"
+    ></app-input-field>
+    <button type="submit" class="mt-12 btn bg-yellow p-3 min-w-full">
+      Sign Up
+    </button>
+    <div class="flex justify-center align-items-center mt-3 ">
+      <span class='forgot mr-2'>Already have an account?</span>
+      <a class="underline forgot" [routerLink]="['/account/login']">Log in here</a>
+    </div>
+  </form>
+</div>

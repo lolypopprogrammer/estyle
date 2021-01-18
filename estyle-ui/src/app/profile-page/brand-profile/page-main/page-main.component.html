@@ -1,0 +1,96 @@
+<div class="main">
+  <div
+    class="profile-background"
+    [ngClass]="{ loading: isBackgroundLoaded }"
+    [ngStyle]="{ backgroundImage: 'url(' + authorBackground + ')' }"
+  >
+    <div *ngIf="isChanging" [ngStyle]="{ right: '-90%' }" class="gear">
+      <input
+        (change)="editBackground($event)"
+        id="backgroundProfile"
+        type="file"
+        accept=".jpg, .jpeg, .png"
+        hidden
+      />
+      <label for="backgroundProfile"
+        ><img
+          [ngStyle]="{ zIndex: 1000 }"
+          src="assets/images/gear.svg.png"
+          alt=""
+      /></label>
+    </div>
+  </div>
+  <div class="container profile-container">
+    <div class="profile-info-block">
+      <div
+        class="profile-photo"
+        [ngClass]="{ loading: isBackgroundLoaded }"
+        [ngStyle]="{ backgroundImage: 'url(' + authorThumbnail + ')' }"
+      >
+        <div *ngIf="isChanging" class="gear">
+          <input
+            (change)="editThumbnail($event)"
+            id="author"
+            type="file"
+            accept=".jpg, .jpeg, .png"
+            hidden
+          />
+          <label for="author"
+            ><img src="assets/images/gear.svg.png" alt=""
+          /></label>
+        </div>
+      </div>
+      <div class="profile-description">
+        <div class="profile-bio">
+          <!-- <h1>{{ firstName }} {{ lastName }}</h1> -->
+          <input
+            #nameField
+            *ngIf="changingName; else nameText"
+            class="status-input"
+            placeholder="Input name"
+            (keyup.enter)="submitName(nameField.value)"
+            [value]="firstName + ' ' + lastName"
+          />
+          <ng-template #nameText>
+            <h1>
+                {{ firstName }} {{ lastName }}
+              <span
+                *ngIf="isOwner"
+                (click)="showNameForm()"
+                style="cursor: pointer"
+                >✎</span
+              >
+            </h1>
+          </ng-template>
+          <input
+            #statusField
+            *ngIf="changingStatus; else statusText"
+            class="status-input"
+            placeholder="Input text"
+            (keyup.enter)="submitStatus(statusField.value)"
+            [value]="status"
+          />
+          <ng-template #statusText>
+            <div>
+              {{ status }}
+              <span
+                *ngIf="isOwner"
+                (click)="showStatusForm()"
+                style="cursor: pointer"
+                >✎</span
+              >
+            </div>
+          </ng-template>
+        </div>
+        <div class="group-btn">
+          <button class="btn-follow" (click)="follow()" *ngIf="!isOwner && !changingStatus && notSubscribe ">
+            Follow
+          </button>
+          <button class="btn-follow" (click)="unSub()" *ngIf="!isOwner && !notSubscribe ">
+            Unsubscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

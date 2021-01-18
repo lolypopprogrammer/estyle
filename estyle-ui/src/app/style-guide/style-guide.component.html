@@ -1,0 +1,102 @@
+<div class="bg-main flex flex-col justify-center items-center">
+
+  <div class="absolute w-full top-0 left-0">
+    <div *ngFor="let item of [1,2,3]">
+      <div class="w-full"
+           [style.height.rem]="31.25"
+           [style.background-image]="'url(./assets/images/Shape_4_copy_4.png)'"
+           [style.background-position-x.%]="40"
+           [style.background-position-y.rem]="79.375">
+      </div>
+      <div [style.background-color]="'#ffc929'" [style.height.rem]="100"></div>
+      <div class="w-full top-0 left-0"
+           [style.height.rem]="31.25"
+           [style.background-image]="'url(./assets/images/Shape_4_copy_4.png)'"
+           [style.background-position-x.%]="40"
+           [style.background-position-y.rem]="29.375">
+      </div>
+      <div class="w-full"
+           [style.height.rem]="31.25"
+           [style.background-image]="'url(./assets/images/Shape_4_copy_6.png)'"
+           [style.background-position-x.%]="40"
+           [style.background-position-y.rem]="81.25">
+      </div>
+      <div [style.background-color]="'#ff82b8'" [style.height.rem]="31.25"></div>
+      <div class="w-full top-0 left-0"
+           [style.height.rem]="31.25"
+           [style.background-image]="'url(./assets/images/Shape_4_copy_6.png)'"
+           [style.background-position-x.%]="40"
+           [style.background-position-y.rem]="29.375">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper container my-12 relative z-10">
+
+    <app-page-main></app-page-main>
+
+    <app-page-about></app-page-about>
+
+    <app-page-factor></app-page-factor>
+
+    <app-page-results></app-page-results>
+
+    <app-page-detail></app-page-detail>
+
+
+    <app-page-card class="block relative"
+                   *ngFor="let page of data$ | async; let i = index;"
+                   title="Tops"
+                   [items]="page.blocks.length"
+                   [page]="i + 1">
+      <div class="flex">
+        <div class="flex flex-col px-16 items-center justify-center">
+          <div class="border-l-4 border-pink-300 h-40 mb-10"></div>
+          <div class="border-l-4 border-pink-300 h-32 mb-10"></div>
+          <div class="border-l-4 border-pink-300 flex-1 mb-10"></div>
+          <div class="rotate-90 title uppercase absolute text-5xl"><p class="m-0 bg-white px-4 mt-8">{{ page.title }}</p></div>
+        </div>
+        <div>
+
+          <ng-container *ngFor="let block of page.blocks">
+            <div class="text-base text-gray-600 uppercase" *ngIf="block.type === 'category'">
+              {{ block.text }}
+            </div>
+    
+            <div class="text-6xl font-playfair uppercase mb-10" *ngIf="block.type === 'title'">
+              {{ block.text }}
+            </div>
+    
+            <div class="text-4xl font-playfair uppercase mb-10" *ngIf="block.type === 'sub-title'">
+              {{ block.text }}
+            </div>
+    
+            <div class="text-sm mb-10" *ngIf="block.type === 'text'">
+              {{ block.text }}
+            </div>
+    
+            <app-text-image-block class="mb-10 block"
+                                  *ngIf="block.type === 'text-block-image'"
+                                  [title]="block.title"
+                                  [description]="block.description"
+                                  [picture]="block.picture"
+                                  [text]="block.text"
+                                  [position]="block.position">
+            </app-text-image-block>
+    
+          </ng-container>
+        </div>
+      </div>
+
+    </app-page-card>
+
+    <app-page-personal-style
+      [title]="style?.title"
+      [description]="style?.description"
+      [recommendations]="style?.recommendations">
+    </app-page-personal-style>
+
+    <app-page-guide></app-page-guide>
+
+  </div>
+</div>

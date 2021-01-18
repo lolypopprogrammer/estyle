@@ -1,0 +1,20 @@
+<div class="auth-card bg-darkPink md:px-32 px-8 py-8">
+  <div class="flex flex-col justify-center items-center mt-8 mb-8">
+    <h1>Reset Password</h1>
+    <h2>Input new password</h2>
+  </div>
+  <form class="fields" (ngSubmit)="resetPassword()">
+    <app-input-field
+      id="password"
+      ngDefaultControl
+      name="password"
+      label="Password"
+      [formControl]="newPasswordControl"
+      wrap="mb-4"
+    ></app-input-field>
+    <button class="btn bg-yellow p-3 min-w-full">Send</button>
+    <div class="flex justify-center mt-3 ">
+      <a class="underline forgot" [routerLink]="['/account/login']">Back to login</a>
+    </div>
+  </form>
+</div>
